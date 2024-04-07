@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="叶鹏翔的博客">
 <meta property="og:description" content="摘要 本文对于hexo的一些语法进行简单讲解，主要记录了hexo特定的一些写作方法以及常见的一些参数如何设置。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s21.ax1x.com/2024/04/07/pFqf6fI.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/04/07/pFqfvBF.jpg">
 <meta property="article:published_time" content="2024-04-07T02:31:56.000Z">
-<meta property="article:modified_time" content="2024-04-07T03:54:29.281Z">
+<meta property="article:modified_time" content="2024-04-07T03:59:18.869Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="写作">
 <meta property="article:tag" content="技巧">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s21.ax1x.com/2024/04/07/pFqf6fI.jpg">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/04/07/pFqfvBF.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -230,7 +230,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://s21.ax1x.com/2024/04/07/pFqf6fI.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://s21.ax1x.com/2024/04/07/pFqfvBF.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
@@ -337,11 +337,7 @@
 <p>这里你看到的图片，就是<code>index_img</code>
 定义的图片，图片可以是链接形式，也可以是存放在你的根目录下的<code>/img</code>文件夹里，必须使用相对路径，绝对路径不能部署到服务器！后面会说，相对路径也不是哪里都能放的。</p>
 <p>打开文章后，文章里面的顶部图片由<code>banner_img</code>确定；</p>
-<figure>
-<img src="https://s21.ax1x.com/2024/04/07/pFqfCy8.png" srcset="/img/loading.gif" lazyload
-alt="pFqfCy8.png" />
-<figcaption aria-hidden="true">pFqfCy8.png</figcaption>
-</figure>
+<p><img src="https://s21.ax1x.com/2024/04/07/pFqfCy8.png" srcset="/img/loading.gif" lazyload /></p>
 <p>一样的，对于图片也是可以取链接或者相对路径图片。</p>
 <h3 id="标签和分类">标签和分类</h3>
 <p><code>categories:</code>和<code>tags:</code>；默认不添加，要自己添加；</p>
@@ -368,17 +364,9 @@ x = y_{n+1} + z^{x}
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
 <p>当我们<code>hexo clean</code> <code>hexo g</code>
 <code>hexo d</code>三步走后，他就可以自动给你部署到GitHub上，然后我们就可以访问到了，但是部署服务器并不是什么文件都会上传到GitHub上的，比如：</p>
-<figure>
-<img src="https://s21.ax1x.com/2024/04/07/pFqfpSP.png" srcset="/img/loading.gif" lazyload
-alt="pFqfpSP.png" />
-<figcaption aria-hidden="true">pFqfpSP.png</figcaption>
-</figure>
+<p><img src="https://s21.ax1x.com/2024/04/07/pFqfpSP.png" srcset="/img/loading.gif" lazyload /></p>
 <p>这是我<code>hexo d</code>后GitHub上的文件，再看我本地端的文件</p>
-<figure>
-<img src="https://s21.ax1x.com/2024/04/07/pFqWxJI.png" srcset="/img/loading.gif" lazyload
-alt="pFqWxJI.png" />
-<figcaption aria-hidden="true">pFqWxJI.png</figcaption>
-</figure>
+<p><img src="https://s21.ax1x.com/2024/04/07/pFqWxJI.png" srcset="/img/loading.gif" lazyload /></p>
 <p>你会发现，少了一些文件，多了一些文件，当我们打开<code>.gitignore</code>文件后查看</p>
 <figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br>_multiconfig<span class="hljs-number">.</span>yml<br></code></pre></td></tr></table></figure>
 <p>里面出现的文件和文件夹，都没有出现在GitHub上，这就是<code>hexo</code>插件（你安装hexo后安装的插件，后续看看要不要也写一篇hexo的教程和我走过的坑），在读取这个文件后，自动忽略部署了。</p>
