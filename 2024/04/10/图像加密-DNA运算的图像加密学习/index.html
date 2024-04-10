@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s21.ax1x.com/2024/04/10/pFOcMcT.jpg">
 <meta property="article:published_time" content="2024-04-10T01:51:59.000Z">
-<meta property="article:modified_time" content="2024-04-10T14:08:35.977Z">
+<meta property="article:modified_time" content="2024-04-10T15:56:11.442Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="图像">
 <meta property="article:tag" content="加密">
@@ -428,13 +428,12 @@ alt="l_blue_channel" />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-comment"># 同或、异或</span><br>image1 = cv2.imread(<span class="hljs-string">&#x27;l_blue_channel.bmp&#x27;</span>, cv2.IMREAD_GRAYSCALE)<br>image2 = cv2.imread(<span class="hljs-string">&#x27;2_Henon_R.bmp&#x27;</span>, cv2.IMREAD_GRAYSCALE)<br><br>tonghuo = cv2.bitwise_xor(image1, image2)<br>tonghuo1 = cv2.bitwise_xor(tonghuo, image2) <br>cv2.imshow(<span class="hljs-string">&quot;1&quot;</span>,tonghuo)<br>cv2.imshow(<span class="hljs-string">&quot;2&quot;</span>,tonghuo1)<br>cv2.waitKey(<span class="hljs-number">0</span>)<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
 <p>实验成功：</p>
 <figure>
-<img src="../img/图像加密-DNA运算的图像加密学习/2-17127190204352.bmp" srcset="/img/loading.gif" lazyload
+<img src="https://img2.imgtp.com/2024/04/10/APe5HAiP.bmp" srcset="/img/loading.gif" lazyload
 alt="tonghuo" />
 <figcaption aria-hidden="true">tonghuo</figcaption>
 </figure>
 <figure>
-<img
-src="../img/图像加密-DNA运算的图像加密学习/l_blue_channel-17127173522441.bmp" srcset="/img/loading.gif" lazyload
+<img src="https://img2.imgtp.com/2024/04/10/W1EXeJlc.bmp" srcset="/img/loading.gif" lazyload
 alt="tonghuo1" />
 <figcaption aria-hidden="true">tonghuo1</figcaption>
 </figure>
@@ -443,14 +442,13 @@ alt="tonghuo1" />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment"># 读取灰度图像</span><br>image_gray = cv2.imread(<span class="hljs-string">&#x27;l_blue_channel.bmp&#x27;</span>, cv2.IMREAD_GRAYSCALE)<br><br><br><span class="hljs-comment"># 获取图像尺寸</span><br>height, width = image_gray.shape<br><br><span class="hljs-comment"># 将像素转换为二进制序列并进行反转</span><br>binary_image = np.zeros_like(image_gray)<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(height):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(width):<br>        pixel_binary = <span class="hljs-built_in">bin</span>(image_gray[i, j])[<span class="hljs-number">2</span>:].zfill(<span class="hljs-number">8</span>)  <span class="hljs-comment"># 转换为8位二进制序列</span><br>        inverted_binary = <span class="hljs-string">&#x27;&#x27;</span>.join([<span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">if</span> bit == <span class="hljs-string">&#x27;0&#x27;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;0&#x27;</span> <span class="hljs-keyword">for</span> bit <span class="hljs-keyword">in</span> pixel_binary])  <span class="hljs-comment"># 反转序列</span><br>        binary_image[i, j] = <span class="hljs-built_in">int</span>(inverted_binary, <span class="hljs-number">2</span>)  <span class="hljs-comment"># 转换为十进制并赋值给新图像</span><br><br><span class="hljs-comment"># 显示图像</span><br>cv2.imshow(<span class="hljs-string">&#x27;Inverted Binary Image&#x27;</span>, binary_image)<br>cv2.imshow(<span class="hljs-string">&#x27;image_gray Image&#x27;</span>, image_gray)<br>cv2.waitKey(<span class="hljs-number">0</span>)<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
 <p><strong>原图：</strong></p>
 <figure>
-<img
-src="../img/图像加密-DNA运算的图像加密学习/l_blue_channel-17127173522441.bmp" srcset="/img/loading.gif" lazyload
+<img src="https://img2.imgtp.com/2024/04/10/W1EXeJlc.bmp" srcset="/img/loading.gif" lazyload
 alt="image_gray" />
 <figcaption aria-hidden="true">image_gray</figcaption>
 </figure>
 <p><strong>结果图：</strong></p>
 <figure>
-<img src="../img/图像加密-DNA运算的图像加密学习/2-17127191881133.bmp" srcset="/img/loading.gif" lazyload
+<img src="https://img2.imgtp.com/2024/04/10/v9CvtMds.bmp" srcset="/img/loading.gif" lazyload
 alt="binary_image" />
 <figcaption aria-hidden="true">binary_image</figcaption>
 </figure>
@@ -579,23 +577,40 @@ alt="binary_image" />
   
     <article id="comments" lazyload>
       
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
-          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'timmiemedler',
-              apikey: 'cEjqFAxoAXzldvhqS8sjwLdNCaXwdA94kcepal041yPxXC7g78OIWDqwjPyDFfKV'
-            });
-          });
-        });
-      </script>
-    
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Yelelalearn/Yelelalearn.github.io","repo-id":"R_kgDOLqBHxQ","category":null,"category-id":null,"theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
     <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
 
 
     </article>
