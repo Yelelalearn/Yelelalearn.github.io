@@ -16,16 +16,16 @@
   <meta name="author" content="Yelearn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机视觉作业-作业5 参考教材相应章节内容，完成以下实践内容：  缩放操作  参考实例5.1-5.2将图像按照指定宽高和指定比例分别进行缩放；  翻转操作  参考实例5.3实现多种不同翻转效果；  平移操作  参考实例5.4 实现图像向不同方向平移效果；  旋转操作  参考实例5.5实现图像逆时针旋转效果；  倾斜操作  实例5.6 实现图像分别向左和右">
+    <meta name="description" content="计算机视觉作业-作业5 参考教材相应章节内容，完成以下实践内容： 1、缩放操作 2、翻转操作 3、平移操作 4、旋转操作 5、倾斜操作 6、透视操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机视觉-图像视觉作业-作业5">
 <meta property="og:url" content="https://yelelalearn.github.io/2024/04/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89-%E5%9B%BE%E5%83%8F%E8%A7%86%E8%A7%89%E4%BD%9C%E4%B8%9A-%E4%BD%9C%E4%B8%9A5/index.html">
 <meta property="og:site_name" content="叶鹏翔的博客">
-<meta property="og:description" content="计算机视觉作业-作业5 参考教材相应章节内容，完成以下实践内容：  缩放操作  参考实例5.1-5.2将图像按照指定宽高和指定比例分别进行缩放；  翻转操作  参考实例5.3实现多种不同翻转效果；  平移操作  参考实例5.4 实现图像向不同方向平移效果；  旋转操作  参考实例5.5实现图像逆时针旋转效果；  倾斜操作  实例5.6 实现图像分别向左和右">
+<meta property="og:description" content="计算机视觉作业-作业5 参考教材相应章节内容，完成以下实践内容： 1、缩放操作 2、翻转操作 3、平移操作 4、旋转操作 5、倾斜操作 6、透视操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s21.ax1x.com/2024/04/09/pFOaMeP.png">
 <meta property="article:published_time" content="2024-04-09T15:53:03.000Z">
-<meta property="article:modified_time" content="2024-04-10T05:55:28.849Z">
+<meta property="article:modified_time" content="2024-04-10T14:17:38.234Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="图像">
 <meta property="article:tag" content="计算机视觉">
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.5k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          14 分钟
+          13 分钟
         
       </span>
     
@@ -323,30 +323,12 @@
                 
                 <h1 id="计算机视觉作业-作业5">计算机视觉作业-作业5</h1>
 <p>参考教材相应章节内容，完成以下实践内容：</p>
-<ol type="1">
-<li>缩放操作</li>
-</ol>
-<p>参考实例5.1-5.2将图像按照指定宽高和指定比例分别进行缩放；</p>
-<ol start="2" type="1">
-<li>翻转操作</li>
-</ol>
-<p>参考实例5.3实现多种不同翻转效果；</p>
-<ol start="3" type="1">
-<li>平移操作</li>
-</ol>
-<p>参考实例5.4 实现图像向不同方向平移效果；</p>
-<ol start="4" type="1">
-<li>旋转操作</li>
-</ol>
-<p>参考实例5.5实现图像逆时针旋转效果；</p>
-<ol start="5" type="1">
-<li>倾斜操作</li>
-</ol>
-<p>实例5.6 实现图像分别向左和右倾斜效果；</p>
-<ol start="6" type="1">
-<li>透视操作</li>
-</ol>
-<p>实例5.7 模拟从底部观察图像得到的透视效果；</p>
+<p>1、缩放操作</p>
+<p>2、翻转操作</p>
+<p>3、平移操作</p>
+<p>4、旋转操作</p>
+<p>5、倾斜操作</p>
+<p>6、透视操作</p>
 <p><span id="more"></span></p>
 <hr />
 <ol type="1">
@@ -354,7 +336,7 @@
 </ol>
 <p>1.1 将图像按照指定宽高进行缩放；</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br>img = cv2.imread(<span class="hljs-string">&quot;lena.bmp&quot;</span>)  <span class="hljs-comment"># 读取图像</span><br>dst1 = cv2.resize(img, (<span class="hljs-number">100</span>, <span class="hljs-number">100</span>))  <span class="hljs-comment"># 按照宽100像素、高100像素的大小进行缩放</span><br>dst2 = cv2.resize(img, (<span class="hljs-number">400</span>, <span class="hljs-number">400</span>))  <span class="hljs-comment"># 按照宽400像素、高400像素的大小进行缩放</span><br>cv2.imwrite(<span class="hljs-string">&quot;1.1.1.jpg&quot;</span>,img) <span class="hljs-comment"># 保存原图图像</span><br>cv2.imwrite(<span class="hljs-string">&quot;1.1.2.jpg&quot;</span>,dst1)<br>cv2.imwrite(<span class="hljs-string">&quot;1.1.3.jpg&quot;</span>,dst2)<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br>img = cv2.imread(<span class="hljs-string">&quot;lena.bmp&quot;</span>)  <span class="hljs-comment"># 读取图像</span><br>dst1 = cv2.resize(img, (<span class="hljs-number">100</span>, <span class="hljs-number">100</span>))  <span class="hljs-comment"># 按照宽100像素、高100像素的大小进行缩放</span><br>dst2 = cv2.resize(img, (<span class="hljs-number">400</span>, <span class="hljs-number">400</span>))  <span class="hljs-comment"># 按照宽400像素、高400像素的大小进行缩放</span><br>cv2.imwrite(<span class="hljs-string">&quot;1.1.1.jpg&quot;</span>,img) <span class="hljs-comment"># 保存原图图像</span><br>cv2.imwrite(<span class="hljs-string">&quot;1.1.2.jpg&quot;</span>,dst1)<br>cv2.imwrite(<span class="hljs-string">&quot;1.1.3.jpg&quot;</span>,dst2)<br></code></pre></td></tr></table></figure>
 <p><strong>效果图：</strong></p>
 <figure>
 <img src="https://s21.ax1x.com/2024/04/09/pFOa8Jg.jpg" srcset="/img/loading.gif" lazyload
@@ -439,7 +421,8 @@ alt="1.2.3.jpg" />
 <figcaption aria-hidden="true">3.2.jpg</figcaption>
 </figure>
 <figure>
-<img src="../img/计算机视觉-图像视觉作业-作业5/3.3.jpg" srcset="/img/loading.gif" lazyload alt="3.3.jpg" />
+<img src="https://img2.imgtp.com/2024/04/10/aaTUr9yc.jpg" srcset="/img/loading.gif" lazyload
+alt="3.3.jpg" />
 <figcaption aria-hidden="true">3.3.jpg</figcaption>
 </figure>
 <ol start="4" type="1">
@@ -454,7 +437,8 @@ alt="1.2.3.jpg" />
 <figcaption aria-hidden="true">4.0.jpg</figcaption>
 </figure>
 <figure>
-<img src="../img/计算机视觉-图像视觉作业-作业5/4.1.jpg" srcset="/img/loading.gif" lazyload alt="4.1.jpg" />
+<img src="https://img2.imgtp.com/2024/04/10/1LvgNtED.jpg" srcset="/img/loading.gif" lazyload
+alt="4.1.jpg" />
 <figcaption aria-hidden="true">4.1.jpg</figcaption>
 </figure>
 <ol start="5" type="1">
@@ -470,7 +454,8 @@ alt="1.2.3.jpg" />
 <figcaption aria-hidden="true">5.0.jpg</figcaption>
 </figure>
 <figure>
-<img src="../img/计算机视觉-图像视觉作业-作业5/5.1.jpg" srcset="/img/loading.gif" lazyload alt="5.1.jpg" />
+<img src="https://img2.imgtp.com/2024/04/10/Ncury2ba.jpg" srcset="/img/loading.gif" lazyload
+alt="5.1.jpg" />
 <figcaption aria-hidden="true">5.1.jpg</figcaption>
 </figure>
 <p>5.2 图像左倾斜</p>
@@ -482,7 +467,8 @@ alt="1.2.3.jpg" />
 <figcaption aria-hidden="true">5.0.jpg</figcaption>
 </figure>
 <figure>
-<img src="../img/计算机视觉-图像视觉作业-作业5/5.2.jpg" srcset="/img/loading.gif" lazyload alt="5.2.jpg" />
+<img src="https://img2.imgtp.com/2024/04/10/R6c02Daj.jpg" srcset="/img/loading.gif" lazyload
+alt="5.2.jpg" />
 <figcaption aria-hidden="true">5.2.jpg</figcaption>
 </figure>
 <ol start="6" type="1">
@@ -497,7 +483,8 @@ alt="1.2.3.jpg" />
 <figcaption aria-hidden="true">6.0.jpg</figcaption>
 </figure>
 <figure>
-<img src="../img/计算机视觉-图像视觉作业-作业5/6.1.jpg" srcset="/img/loading.gif" lazyload alt="6.1.jpg" />
+<img src="https://img2.imgtp.com/2024/04/10/f1yRErS0.jpg" srcset="/img/loading.gif" lazyload
+alt="6.1.jpg" />
 <figcaption aria-hidden="true">6.1.jpg</figcaption>
 </figure>
 
