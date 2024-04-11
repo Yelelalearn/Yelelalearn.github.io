@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s21.ax1x.com/2024/04/12/pFXfbMq.png">
 <meta property="article:published_time" content="2024-04-11T16:05:46.000Z">
-<meta property="article:modified_time" content="2024-04-11T16:09:56.748Z">
+<meta property="article:modified_time" content="2024-04-11T16:21:41.167Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="图像">
 <meta property="article:tag" content="数字图像处理">
@@ -434,6 +434,12 @@ WebP：由Google开发，旨在提供比JPEG更好的压缩，支持<strong>有�
 <h2 id="代码">代码</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入库</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><br><span class="hljs-comment"># 读取图像</span><br>image = cv2.imread(<span class="hljs-string">&#x27;1.1.jpg&#x27;</span>)<br>scale_factor = <span class="hljs-number">0.5</span>  <span class="hljs-comment"># 缩小比例，根据需要调整</span><br>image = cv2.resize(image, <span class="hljs-literal">None</span>, fx=scale_factor, fy=scale_factor)<br><br><span class="hljs-comment"># 保存图片为test1.jpg有损压缩</span><br>cv2.imwrite(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>,image)<br><br><span class="hljs-comment"># 读取test1.jpg文件</span><br>image1 = cv2.imread(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>)<br><br><span class="hljs-comment"># 想减查看原图和读取的图片的差别</span><br>sub = image1-image<br><br><span class="hljs-comment"># 输出图片效果</span><br>cv2.imshow(<span class="hljs-string">&quot;resized_image&quot;</span>, image)<br>cv2.imshow(<span class="hljs-string">&quot;image1&quot;</span>, image1)<br>cv2.imshow(<span class="hljs-string">&quot;sub&quot;</span>, sub)<br><br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
 <h2 id="实验效果图"><strong>实验效果图</strong></h2>
+<h3 id="原图">原图</h3>
+<figure>
+<img src="https://img2.imgtp.com/2024/04/10/3aCYgxgt.jpg" srcset="/img/loading.gif" lazyload
+alt="1.1.jpg" />
+<figcaption aria-hidden="true">1.1.jpg</figcaption>
+</figure>
 <h3 id="保存后的的jpg格式图片">保存后的的jpg格式图片</h3>
 <figure>
 <img src="https://s21.ax1x.com/2024/04/11/pFXWaNQ.jpg" srcset="/img/loading.gif" lazyload
