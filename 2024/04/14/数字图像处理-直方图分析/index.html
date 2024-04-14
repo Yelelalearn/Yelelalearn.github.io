@@ -16,28 +16,28 @@
   <meta name="author" content="Yelearn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="数字图像处理-学习笔记-图像压缩">
+    <meta name="description" content="图像直方图分析及实验 1.1 使用 OpenCV 统计直方图 函数 cv2.calcHist 可以帮助我们统计一幅图像 的直方图。我们一起来熟悉一下这个函数和它的参数： 1cv2.calcHist(images, channels, mask, histSize, ranges, hist, accumulate)  images：原图像（图像格式为 uint8 或 float32）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字图像处理-学习笔记-图像压缩">
-<meta property="og:url" content="https://yelelalearn.github.io/2024/04/12/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9/index.html">
+<meta property="og:title" content="数字图像处理-直方图分析">
+<meta property="og:url" content="https://yelelalearn.github.io/2024/04/14/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="叶鹏翔的博客">
-<meta property="og:description" content="数字图像处理-学习笔记-图像压缩">
+<meta property="og:description" content="图像直方图分析及实验 1.1 使用 OpenCV 统计直方图 函数 cv2.calcHist 可以帮助我们统计一幅图像 的直方图。我们一起来熟悉一下这个函数和它的参数： 1cv2.calcHist(images, channels, mask, histSize, ranges, hist, accumulate)  images：原图像（图像格式为 uint8 或 float32）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png">
-<meta property="article:published_time" content="2024-04-11T16:05:46.000Z">
-<meta property="article:modified_time" content="2024-04-14T07:14:30.771Z">
+<meta property="og:image" content="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png">
+<meta property="article:published_time" content="2024-04-14T06:43:02.000Z">
+<meta property="article:modified_time" content="2024-04-14T07:45:22.125Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="数字图像处理">
 <meta property="article:tag" content="图像">
-<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数字图像处理-学习笔记-图像压缩 - 叶鹏翔的博客</title>
+  <title>数字图像处理-直方图分析 - 叶鹏翔的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +231,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://pic.imgdb.cn/item/661b813268eb935713d5b508.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://pic.imgdb.cn/item/661b828968eb935713d67ace.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数字图像处理-学习笔记-图像压缩"></span>
+            <span id="subtitle" data-typed-text="数字图像处理-直方图分析"></span>
           
         </div>
 
@@ -248,8 +248,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-12 00:05" pubdate>
-          2024年4月12日 凌晨
+        <time datetime="2024-04-14 14:43" pubdate>
+          2024年4月14日 下午
         </time>
       </span>
     
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          662 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          10 分钟
+          6 分钟
         
       </span>
     
@@ -308,151 +308,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数字图像处理-学习笔记-图像压缩</h1>
+            <h1 id="seo-header">数字图像处理-直方图分析</h1>
             
             
               <div class="markdown-body">
                 
-                <h1
-id="数字图像处理-学习笔记-图像压缩">数字图像处理-学习笔记-图像压缩</h1>
-<span id="more"></span>
-<h1 id="图像压缩">6.11 图像压缩</h1>
-<h2 id="图像压缩基础知识">图像压缩基础知识</h2>
-<p><strong>首先</strong></p>
-<p>数据 <span class="math inline">\(\neq\)</span> 信息</p>
-<p>数据是信息的载体。</p>
-<blockquote>
-<p>当我们打电话时，电话对面的人和你交流，我们通过电话传输的是电波，是数据，而对面听到的是你说的话，属于信息。</p>
-</blockquote>
-<p>图像压缩就是对数据进行压缩。</p>
-<p>图像压缩很有必要</p>
-<h3 id="可行性">可行性</h3>
-<p>改变图像的描述方式可以变更存储空间。</p>
-<blockquote>
-<p>比如我们可以对原来8个红色的像素表示成<code>8 * R</code>，也就是说，原来我们要用八个格子装红色像素的数据，现在只要两个格子。</p>
-</blockquote>
-<p>上面的例子也就是我们所说的：</p>
-<p><em>图像像素存在着大量冗余</em>。</p>
-<p>当然图像视觉感知也存在冗余——也就是我们人眼对于微小的颜色变化是没有感知的，可以把他们用刚刚的方法缩小存储空间。</p>
-<blockquote>
-<p>人眼会忽略微小差距</p>
-</blockquote>
-<h1 id="冗余分析">6.12 冗余分析</h1>
-<h2 id="冗余分类">冗余分类</h2>
+                <h1 id="图像直方图分析及实验">图像直方图分析及实验</h1>
+<p>1.1 使用 OpenCV 统计直方图</p>
+<p>函数 cv2.calcHist 可以帮助我们统计一幅图像
+的直方图。我们一起来熟悉一下这个函数和它的参数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">cv2.calcHist(images, channels, mask, histSize, ranges, hist, accumulate)<br></code></pre></td></tr></table></figure>
 <ul>
-<li>空间冗余</li>
-<li>时间冗余</li>
-<li>统计冗余</li>
-<li>视觉心理冗余</li>
+<li><p><strong>images</strong>：原图像（图像格式为 uint8 或
+float32）。当传入函数时应该 用中括号 [] 括起来，例如：[img]。</p></li>
+<li><p><strong>channels</strong>：同样需要用中括号括起来，它会告诉函数我们要统计那幅图
+像的直方图。如果输入图像是灰度图，它的值就是 [0]；如果是彩色图像
+的话，传入的参数可以是 [0]，[1]，[2] 它们分别对应着通道
+B，G，R。</p></li>
+<li><p><strong>mask</strong>: 掩模图像。要统计整幅图像的直方图就把它设为
+None。但是如
+果你想统计图像某一部分的直方图的话，你就需要制作一个掩模图像，并使用它。（后边有例子）</p></li>
+<li><p><strong>histSize</strong>：BIN
+的数目。也应该用中括号括起来，例如：[256]。</p></li>
+<li><p><strong>ranges:</strong> 像素值范围，通常为 [0，256]</p></li>
+<li><p><strong>hist</strong>：是一个 256x1
+的数组作为返回值，每一个值代表了与次灰度值对应的像素点数目。</p></li>
+<li><p><strong>accumulate</strong>：是一个布尔值，用来表示直方图是否叠加。</p></li>
 </ul>
-<h3 id="对于空间冗余">对于空间冗余</h3>
-<ul>
-<li><p>相邻像素之间存在相关性</p></li>
-<li><p>相应帧之间相关性也很大</p>
-<ul>
-<li>去除冗余的方法：预测、变换</li>
-</ul></li>
-</ul>
-<h3 id="对于统计冗余">对于统计冗余</h3>
-<ul>
-<li>信息熵</li>
-<li>信息量</li>
-<li>熵是平均信息量</li>
-<li>信息量公式：<span
-class="math inline">\(I(x_n)=-log_i(P_n)\)</span></li>
-<li>如果以2为底，单位是：比特</li>
-<li>如果以<span class="math inline">\(e\)</span>为底，单位是：奈特</li>
-<li>如果以<span class="math inline">\(10\)</span>为底，单位是哈特</li>
-<li>信息量怎么解释：
-<ul>
-<li>你出现的概率越小，你越不寻常，信息量也就更大；</li>
-<li>你出现的概率越大，你越平凡寻常，信息量也就越小。</li>
-</ul></li>
-<li>等概率的熵最大
-<ul>
-<li>但是我们图片的信息熵不是等概率分布的</li>
-<li>所以可以采用一些方法来减少视觉系统的冗余
-<ul>
-<li>量化（IGS）</li>
-</ul></li>
-</ul></li>
-</ul>
-<ol type="1">
-<li>编码方式</li>
-</ol>
-<p>原始图像-&gt;去相关–&gt;量化–&gt;熵编码</p>
-<p>解码–&gt;&gt;熵解码–&gt;&gt;解相关</p>
-<ol start="2" type="1">
-<li>去相关技术</li>
-</ol>
-<ul>
-<li>基于预测</li>
-<li>基于矢量量化</li>
-<li>基于变换</li>
-<li>基于子带变换</li>
-</ul>
-<ol start="3" type="1">
-<li>信息熵编码/统计编码：</li>
-</ol>
-<p>利用图像灰度分布统计特性</p>
-<p>均匀的特点，采用不等字长进行编码。</p>
-<h3 id="图像压缩的分类">图像压缩的分类</h3>
-<ul>
-<li>无损压缩-可逆</li>
-<li>有损压缩-不可逆</li>
-</ul>
-<blockquote>
-<p>常见的图片格式：</p>
-<ul>
-<li>\1. JPEG (或
-JPG)：广泛用于照片和网页图像，支持<strong>有损压缩</strong>，可以减小文件大小。</li>
-<li>\2.
-PNG：支持透明背景，<strong>无损压缩</strong>，常用于网页设计和图标。</li>
-<li>\3. GIF
-：支持动画和透明背景，但颜色限制较多（最多256色），常用于简单动画和图标。</li>
-<li>\4.
-BMP：位图格式，<strong>通常不进行压缩</strong>，因此文件较大，常用于Windows操作系统。</li>
-<li>\5.
-TIFF：主要用于专业图像存储，支持<strong>无损压缩</strong>和多种颜色深度，常用于印刷行业。</li>
-<li>\6.
-RAW：相机原始数据格式，未经处理的图像文件，保留了拍摄时的全部信息，适合后期编辑。</li>
-<li>\7. SVG ：矢量图像格式，适合图形设计，可以无限放大而不失真。</li>
-<li>\8.
-WebP：由Google开发，旨在提供比JPEG更好的压缩，支持<strong>有损和无损压缩</strong>，以及动画和透明度。</li>
-</ul>
-</blockquote>
-<h1 id="实验">实验</h1>
-<p>用python进行实验</p>
-<h2 id="代码">代码</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入库</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><br><span class="hljs-comment"># 读取图像</span><br>image = cv2.imread(<span class="hljs-string">&#x27;1.1.jpg&#x27;</span>)<br>scale_factor = <span class="hljs-number">0.5</span>  <span class="hljs-comment"># 缩小比例，根据需要调整</span><br>image = cv2.resize(image, <span class="hljs-literal">None</span>, fx=scale_factor, fy=scale_factor)<br><br><span class="hljs-comment"># 保存图片为test1.jpg有损压缩</span><br>cv2.imwrite(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>,image)<br><br><span class="hljs-comment"># 读取test1.jpg文件</span><br>image1 = cv2.imread(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>)<br><br><span class="hljs-comment"># 想减查看原图和读取的图片的差别</span><br>sub = image1-image<br><br><span class="hljs-comment"># 输出图片效果</span><br>cv2.imshow(<span class="hljs-string">&quot;resized_image&quot;</span>, image)<br>cv2.imshow(<span class="hljs-string">&quot;image1&quot;</span>, image1)<br>cv2.imshow(<span class="hljs-string">&quot;sub&quot;</span>, sub)<br><br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
-<h2 id="实验效果图"><strong>实验效果图</strong></h2>
-<h3 id="原图">原图</h3>
+<hr />
+<p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br> <br>img1 = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>, <span class="hljs-number">0</span>)<br><span class="hljs-comment"># 别忘了中括号 [img],[0],None,[256],[0,256]，只有 mask 没有中括号</span><br>hist1 = cv2.calcHist([img1], [<span class="hljs-number">0</span>], <span class="hljs-literal">None</span>, [<span class="hljs-number">256</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br> <br>img2 = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>)<br>color = (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">for</span> i, col <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(color):<br>    histr = cv2.calcHist([img2], [i], <span class="hljs-literal">None</span>, [<span class="hljs-number">256</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br>    plt.subplot(<span class="hljs-number">224</span>), plt.plot(histr, color=col),<br>    plt.xlim([<span class="hljs-number">0</span>, <span class="hljs-number">256</span>]), plt.title(<span class="hljs-string">&#x27;Histogram&#x27;</span>)<br>    <br> <br>plt.subplot(<span class="hljs-number">221</span>), plt.imshow(img1, <span class="hljs-string">&#x27;gray&#x27;</span>), plt.title(<span class="hljs-string">&#x27;Image1&#x27;</span>)<br>plt.subplot(<span class="hljs-number">222</span>), plt.hist(img1.ravel(), <span class="hljs-number">256</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>]),<br>plt.title(<span class="hljs-string">&#x27;Histogram&#x27;</span>), plt.xlim([<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br>plt.subplot(<span class="hljs-number">223</span>), plt.imshow(cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)), plt.title(<span class="hljs-string">&#x27;Image2&#x27;</span>)<br>plt.show()<br></code></pre></td></tr></table></figure>
+<p><strong>效果：</strong></p>
 <figure>
-<img src="https://img2.imgtp.com/2024/04/10/3aCYgxgt.jpg" srcset="/img/loading.gif" lazyload
-alt="1.1.jpg" />
-<figcaption aria-hidden="true">1.1.jpg</figcaption>
+<img src="https://pic.imgdb.cn/item/661b82f868eb935713d6b96a.png" srcset="/img/loading.gif" lazyload
+alt="原图" />
+<figcaption aria-hidden="true">原图</figcaption>
 </figure>
-<h3 id="保存后的的jpg格式图片">保存后的的jpg格式图片</h3>
 <figure>
-<img src="https://pic.imgdb.cn/item/6618c64368eb93571317d9bb.jpg" srcset="/img/loading.gif" lazyload
-alt="test1.jpg" />
-<figcaption aria-hidden="true">test1.jpg</figcaption>
+<img src="https://pic.imgdb.cn/item/661b848968eb935713d7a6af.png" srcset="/img/loading.gif" lazyload
+alt="直方图分析分析" />
+<figcaption aria-hidden="true">直方图分析分析</figcaption>
 </figure>
-<h3 id="和原图相减后">和原图相减后</h3>
+<p><strong>对蓝色变量累积分布图：</strong></p>
 <figure>
-<img src="https://s21.ax1x.com/2024/04/11/pFXWdhj.jpg" srcset="/img/loading.gif" lazyload alt="sub.jpg" />
-<figcaption aria-hidden="true">sub.jpg</figcaption>
+<img src="https://pic.imgdb.cn/item/661b854d68eb935713d80912.png" srcset="/img/loading.gif" lazyload
+alt="B变量累积分布图" />
+<figcaption aria-hidden="true">B变量累积分布图</figcaption>
 </figure>
-<h2 id="效果分析">效果分析</h2>
-<ul>
-<li><p>可以看出，保存后的结果和原图的差别不大。</p></li>
-<li><p>当我们进行想减，在显示原图后的结果，可以明显看出差别。</p></li>
-<li><p>图像信息丰富的地方失去了一些细节，但是我们的视觉感知不大；</p></li>
-<li><p>而图像复杂度低的地方损失的像素不是很多。</p></li>
-</ul>
+<h1 id="直方图均衡">直方图均衡</h1>
+<p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br>img = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>,<span class="hljs-number">0</span>)<br>cv2.imshow(<span class="hljs-string">&#x27;img1&#x27;</span>,img)<br><br><span class="hljs-comment"># 直方图均衡</span><br>equ = cv2.equalizeHist(img)<br>res = np.hstack((img,equ))<br><span class="hljs-comment">#stacking images side-by-side</span><br>cv2.imshow(<span class="hljs-string">&#x27;img2&#x27;</span>,res)<br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
+<p><strong>直方图均衡之前</strong></p>
+<p><img
+src="https://pic.imgdb.cn/item/661b854d68eb935713d80912.png" srcset="/img/loading.gif" lazyload /></p>
+<p><strong>直方图均衡后</strong></p>
+<p><img
+src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loading.gif" lazyload /></p>
 <h1 id="总结">总结</h1>
-<p>本次实验总结了图像压缩的方法、分类，还提出了一些图片保存的格式，以及通过实验来验证了会有损压缩图片的像素，对未来图片的加密、图片处理来说，可能会造成复原噪点、图像损失。</p>
-<p>但是图像压缩对于网站来说是很有必要的，可以加快网站对图片的加载速度。</p>
+<p>本实验对图像的直方图进行分析，并进行图片的直方图均衡、直方图分析，了解直方图均衡方法，明白直方图均衡可以很好的均衡图片的像素分布。</p>
+<p>当然本实验也有不足，没能很好地展现直方图均衡前后图片的变化。根据书上的学习可以预先知道，直方图分析可以使得灰度图片变得更清晰可读。</p>
 
                 
               </div>
@@ -474,13 +388,6 @@ alt="test1.jpg" />
   <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="category-chain-item">数字图像处理</a>
   
   
-    <span>></span>
-    
-  <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-
-  
 
       </span>
     
@@ -497,7 +404,7 @@ alt="test1.jpg" />
       
         <a href="/tags/%E5%9B%BE%E5%83%8F/" class="print-no-link">#图像</a>
       
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#学习笔记</a>
+        <a href="/tags/python/" class="print-no-link">#python</a>
       
     </div>
   
@@ -509,8 +416,8 @@ alt="test1.jpg" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数字图像处理-学习笔记-图像压缩</div>
-      <div>https://yelelalearn.github.io/2024/04/12/数字图像处理-学习笔记-图像压缩/</div>
+      <div>数字图像处理-直方图分析</div>
+      <div>https://yelelalearn.github.io/2024/04/14/数字图像处理-直方图分析/</div>
     </div>
     <div class="license-meta">
       
@@ -522,7 +429,7 @@ alt="test1.jpg" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月12日</div>
+          <div>2024年4月14日</div>
         </div>
       
       
@@ -559,18 +466,12 @@ alt="test1.jpg" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/13/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="python学习笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python学习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/11/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/" title="我为什么一定要写博客">
-                        <span class="hidden-mobile">我为什么一定要写博客</span>
+                      <a href="/2024/04/13/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="python学习笔记">
+                        <span class="hidden-mobile">python学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
