@@ -16,28 +16,26 @@
   <meta name="author" content="Yelearn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图像直方图分析及实验">
+    <meta name="description" content="今天改论文-停更一天">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字图像处理-直方图分析">
-<meta property="og:url" content="https://yelelalearn.github.io/2024/04/14/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%88%86%E6%9E%90/index.html">
+<meta property="og:title" content="今日水论文-停更一天">
+<meta property="og:url" content="https://yelelalearn.github.io/2024/04/15/%E4%BB%8A%E6%97%A5%E6%B0%B4%E8%AE%BA%E6%96%87-%E5%81%9C%E6%9B%B4%E4%B8%80%E5%A4%A9/index.html">
 <meta property="og:site_name" content="叶鹏翔的博客">
-<meta property="og:description" content="图像直方图分析及实验">
+<meta property="og:description" content="今天改论文-停更一天">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png">
-<meta property="article:published_time" content="2024-04-14T06:43:02.000Z">
-<meta property="article:modified_time" content="2024-04-15T12:16:13.684Z">
+<meta property="og:image" content="https://pic.imgdb.cn/item/661b828768eb935713d67a33.png">
+<meta property="article:published_time" content="2024-04-15T12:12:33.000Z">
+<meta property="article:modified_time" content="2024-04-15T12:23:09.807Z">
 <meta property="article:author" content="Yelearn">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="图像">
-<meta property="article:tag" content="数字图像处理">
+<meta property="article:tag" content="说明">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/661b828768eb935713d67a33.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数字图像处理-直方图分析 - 叶鹏翔的博客</title>
+  <title>今日水论文-停更一天 - 叶鹏翔的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +229,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://pic.imgdb.cn/item/661b828968eb935713d67ace.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://pic.imgdb.cn/item/661b828768eb935713d67a33.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数字图像处理-直方图分析"></span>
+            <span id="subtitle" data-typed-text="今日水论文-停更一天"></span>
           
         </div>
 
@@ -248,8 +246,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-14 14:43" pubdate>
-          2024年4月14日 下午
+        <time datetime="2024-04-15 20:12" pubdate>
+          2024年4月15日 晚上
         </time>
       </span>
     
@@ -260,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          662 字
+          15 字
         
       </span>
     
@@ -271,7 +269,7 @@
         
         
         
-          6 分钟
+          1 分钟
         
       </span>
     
@@ -308,66 +306,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数字图像处理-直方图分析</h1>
+            <h1 id="seo-header">今日水论文-停更一天</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="图像直方图分析及实验">图像直方图分析及实验</h1>
+                <h1 id="今天改论文-停更一天">今天改论文-停更一天</h1>
 <span id="more"></span>
-<p>1.1 使用 OpenCV 统计直方图</p>
-<p>函数 cv2.calcHist 可以帮助我们统计一幅图像
-的直方图。我们一起来熟悉一下这个函数和它的参数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">cv2.calcHist(images, channels, mask, histSize, ranges, hist, accumulate)<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>images</strong>：原图像（图像格式为 uint8 或
-float32）。当传入函数时应该 用中括号 [] 括起来，例如：[img]。</p></li>
-<li><p><strong>channels</strong>：同样需要用中括号括起来，它会告诉函数我们要统计那幅图
-像的直方图。如果输入图像是灰度图，它的值就是 [0]；如果是彩色图像
-的话，传入的参数可以是 [0]，[1]，[2] 它们分别对应着通道
-B，G，R。</p></li>
-<li><p><strong>mask</strong>: 掩模图像。要统计整幅图像的直方图就把它设为
-None。但是如
-果你想统计图像某一部分的直方图的话，你就需要制作一个掩模图像，并使用它。（后边有例子）</p></li>
-<li><p><strong>histSize</strong>：BIN
-的数目。也应该用中括号括起来，例如：[256]。</p></li>
-<li><p><strong>ranges:</strong> 像素值范围，通常为 [0，256]</p></li>
-<li><p><strong>hist</strong>：是一个 256x1
-的数组作为返回值，每一个值代表了与次灰度值对应的像素点数目。</p></li>
-<li><p><strong>accumulate</strong>：是一个布尔值，用来表示直方图是否叠加。</p></li>
-</ul>
-<hr />
-<p><strong>代码：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br> <br>img1 = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>, <span class="hljs-number">0</span>)<br><span class="hljs-comment"># 别忘了中括号 [img],[0],None,[256],[0,256]，只有 mask 没有中括号</span><br>hist1 = cv2.calcHist([img1], [<span class="hljs-number">0</span>], <span class="hljs-literal">None</span>, [<span class="hljs-number">256</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br> <br>img2 = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>)<br>color = (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">for</span> i, col <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(color):<br>    histr = cv2.calcHist([img2], [i], <span class="hljs-literal">None</span>, [<span class="hljs-number">256</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br>    plt.subplot(<span class="hljs-number">224</span>), plt.plot(histr, color=col),<br>    plt.xlim([<span class="hljs-number">0</span>, <span class="hljs-number">256</span>]), plt.title(<span class="hljs-string">&#x27;Histogram&#x27;</span>)<br>    <br> <br>plt.subplot(<span class="hljs-number">221</span>), plt.imshow(img1, <span class="hljs-string">&#x27;gray&#x27;</span>), plt.title(<span class="hljs-string">&#x27;Image1&#x27;</span>)<br>plt.subplot(<span class="hljs-number">222</span>), plt.hist(img1.ravel(), <span class="hljs-number">256</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">256</span>]),<br>plt.title(<span class="hljs-string">&#x27;Histogram&#x27;</span>), plt.xlim([<span class="hljs-number">0</span>, <span class="hljs-number">256</span>])<br>plt.subplot(<span class="hljs-number">223</span>), plt.imshow(cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)), plt.title(<span class="hljs-string">&#x27;Image2&#x27;</span>)<br>plt.show()<br></code></pre></td></tr></table></figure>
-<p><strong>效果：</strong></p>
-<figure>
-<img src="https://pic.imgdb.cn/item/661b82f868eb935713d6b96a.png" srcset="/img/loading.gif" lazyload
-alt="原图" />
-<figcaption aria-hidden="true">原图</figcaption>
-</figure>
-<figure>
-<img src="https://pic.imgdb.cn/item/661b848968eb935713d7a6af.png" srcset="/img/loading.gif" lazyload
-alt="直方图分析分析" />
-<figcaption aria-hidden="true">直方图分析分析</figcaption>
-</figure>
-<p><strong>对蓝色变量累积分布图：</strong></p>
-<figure>
-<img src="https://pic.imgdb.cn/item/661b854d68eb935713d80912.png" srcset="/img/loading.gif" lazyload
-alt="B变量累积分布图" />
-<figcaption aria-hidden="true">B变量累积分布图</figcaption>
-</figure>
-<h1 id="直方图均衡">直方图均衡</h1>
-<p><strong>代码：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br>img = cv2.imread(<span class="hljs-string">&#x27;28.png&#x27;</span>,<span class="hljs-number">0</span>)<br>cv2.imshow(<span class="hljs-string">&#x27;img1&#x27;</span>,img)<br><br><span class="hljs-comment"># 直方图均衡</span><br>equ = cv2.equalizeHist(img)<br>res = np.hstack((img,equ))<br><span class="hljs-comment">#stacking images side-by-side</span><br>cv2.imshow(<span class="hljs-string">&#x27;img2&#x27;</span>,res)<br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
-<p><strong>直方图均衡之前</strong></p>
+<h1 id="往期图片分享">往期图片分享</h1>
 <p><img
-src="https://pic.imgdb.cn/item/661b854d68eb935713d80912.png" srcset="/img/loading.gif" lazyload /></p>
-<p><strong>直方图均衡后</strong></p>
+src="https://pic.imgdb.cn/item/661b828768eb935713d67a33.png" srcset="/img/loading.gif" lazyload /></p>
 <p><img
-src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loading.gif" lazyload /></p>
-<h1 id="总结">总结</h1>
-<p>本实验对图像的直方图进行分析，并进行图片的直方图均衡、直方图分析，了解直方图均衡方法，明白直方图均衡可以很好的均衡图片的像素分布。</p>
-<p>当然本实验也有不足，没能很好地展现直方图均衡前后图片的变化。根据书上的学习可以预先知道，直方图分析可以使得灰度图片变得更清晰可读。</p>
+src="https://pic.imgdb.cn/item/661b813268eb935713d5b4c6.png" srcset="/img/loading.gif" lazyload /></p>
+<p><img
+src="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png" srcset="/img/loading.gif" lazyload /></p>
+<p><img
+src="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png" srcset="/img/loading.gif" lazyload /></p>
+<p><img
+src="https://pic.imgdb.cn/item/661b82f868eb935713d6b96a.png" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/11/pFXmRYV.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/11/pFXm2F0.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/10/pFOcMcT.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/10/pFOcu90.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/10/pFOcmhq.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/08/pFLJe5d.png" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="https://s21.ax1x.com/2024/04/07/pFqfvBF.jpg" srcset="/img/loading.gif" lazyload /></p>
 
                 
               </div>
@@ -386,7 +349,7 @@ src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loadin
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="category-chain-item">数字图像处理</a>
+  <a href="/categories/%E5%B0%8F%E8%AE%B0/" class="category-chain-item">小记</a>
   
   
 
@@ -401,11 +364,7 @@ src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loadin
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/" class="print-no-link">#python</a>
-      
-        <a href="/tags/%E5%9B%BE%E5%83%8F/" class="print-no-link">#图像</a>
-      
-        <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="print-no-link">#数字图像处理</a>
+        <a href="/tags/%E8%AF%B4%E6%98%8E/" class="print-no-link">#说明</a>
       
     </div>
   
@@ -417,8 +376,8 @@ src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loadin
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数字图像处理-直方图分析</div>
-      <div>https://yelelalearn.github.io/2024/04/14/数字图像处理-直方图分析/</div>
+      <div>今日水论文-停更一天</div>
+      <div>https://yelelalearn.github.io/2024/04/15/今日水论文-停更一天/</div>
     </div>
     <div class="license-meta">
       
@@ -430,7 +389,7 @@ src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loadin
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月14日</div>
+          <div>2024年4月15日</div>
         </div>
       
       
@@ -467,18 +426,12 @@ src="https://pic.imgdb.cn/item/661b888668eb935713dc212a.png" srcset="/img/loadin
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/15/%E4%BB%8A%E6%97%A5%E6%B0%B4%E8%AE%BA%E6%96%87-%E5%81%9C%E6%9B%B4%E4%B8%80%E5%A4%A9/" title="今日水论文-停更一天">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">今日水论文-停更一天</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/13/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="python学习笔记">
-                        <span class="hidden-mobile">python学习笔记</span>
+                      <a href="/2024/04/14/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%88%86%E6%9E%90/" title="数字图像处理-直方图分析">
+                        <span class="hidden-mobile">数字图像处理-直方图分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
