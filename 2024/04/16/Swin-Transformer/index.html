@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/661b82f968eb935713d6b9c4.png">
 <meta property="article:published_time" content="2024-04-16T05:14:18.000Z">
-<meta property="article:modified_time" content="2024-04-16T06:27:05.309Z">
+<meta property="article:modified_time" content="2024-04-16T06:30:03.654Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="翻译">
 <meta property="article:tag" content="论文阅读">
@@ -332,8 +332,8 @@ target="_blank" rel="noopener" href="https://github.com/microsoft/Swin-Transform
 <h2 id="引言">1、引言</h2>
 <p>计算机视觉中的建模长期以来一直由卷积神经网络（CNNs）主导。从AlexNet的问世以及它在ImageNet图像分类挑战中的革命性表现开始，CNN架构通过规模的扩大、连接的加强以及更复杂形式的卷积等方式变得越来越强大。由于CNNs在各种视觉任务中作为骨干网络，这些架构的进步导致了性能的提升，从而广泛推动了整个领域的发展。</p>
 <p>另一方面，在自然语言处理（NLP）中，网络架构的演变走上了一条不同的道路，如今普遍的架构是Transformer。Transformer设计用于序列建模和转录任务，其以使用注意力机制来建模数据中的长距离依赖关系而引人注目。它在语言领域取得了巨大的成功，这导致研究人员研究如何将其应用于计算机视觉，最近在特定任务上取得了有希望的结果，特别是在图像分类和联合视觉-语言建模方面。</p>
-<p>在本论文中，我们试图扩展Transformer的适用性，使其能够像在NLP中一样成为计算机视觉的通用骨干网络，就像CNN在视觉中一样。我们观察到，在将其在语言领域的高性能转移到视觉领域时，存在着显著的挑战，这可以通过两种模态之间的差异来解释。其中之一涉及到尺度。与在语言Transformer中作为处理基本单元的单词标记不同，视觉元素的尺度可以有很大的变化，这在诸如目标检测等任务中受到关注。在现有的基于Transformer的模型中，标记都是固定尺度的，这在视觉应用中不合适。另一个差异是图像中像素的分辨率要比文本段落中的单词高得多。存在许多像语义分割这样的视觉任务需要在像素级别进行密集预测，对于高分辨率图像来说，这将变得棘手，因为其自注意力的计算复杂度与图像尺寸的平方成正比。
-<em>为了克服这些问题</em> ，我们提出了一个名为Swin
+<p>在本论文中，我们试图扩展Transformer的适用性，使其能够像在NLP中一样成为计算机视觉的通用骨干网络，就像CNN在视觉中一样。我们观察到，在将其在语言领域的高性能转移到视觉领域时，存在着显著的挑战，这可以通过两种模态之间的差异来解释。其中之一涉及到尺度。与在语言Transformer中作为处理基本单元的单词标记不同，视觉元素的尺度可以有很大的变化，这在诸如目标检测等任务中受到关注。在现有的基于Transformer的模型中，标记都是固定尺度的，这在视觉应用中不合适。另一个差异是图像中像素的分辨率要比文本段落中的单词高得多。存在许多像语义分割这样的视觉任务需要在像素级别进行密集预测，对于高分辨率图像来说，这将变得棘手，因为其自注意力的计算复杂度与图像尺寸的平方成正比。</p>
+<p><strong>为了克服这些问题</strong> ，我们提出了一个名为Swin
 Transformer的通用Transformer骨干网络，它构建了分层特征图，并具有线性的图像大小计算复杂度。如<a
 href="#图1">图1(a)</a>所示，Swin
 Transformer通过从小尺寸的图块开始（用灰色轮廓标出）并逐渐合并深层Transformer层中的相邻图块来构建分层表示。借助这些分层特征图，Swin
