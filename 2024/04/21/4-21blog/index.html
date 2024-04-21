@@ -1,0 +1,967 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.jpg">
+  <link rel="icon" href="/img/fluid.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Yelearn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="我这个人走得很慢，但是我从不后退。——亚伯拉罕·林肯  本文主要介绍图像分割方法中，基于阈值分割的方法；并通过实验进行分析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理－图像分割方法">
+<meta property="og:url" content="https://yelelalearn.github.io/2024/04/21/4-21blog/index.html">
+<meta property="og:site_name" content="叶鹏翔的博客">
+<meta property="og:description" content="我这个人走得很慢，但是我从不后退。——亚伯拉罕·林肯  本文主要介绍图像分割方法中，基于阈值分割的方法；并通过实验进行分析。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/662331dd0ea9cb1403ef40e7.png">
+<meta property="article:published_time" content="2024-04-21T04:34:46.000Z">
+<meta property="article:modified_time" content="2024-04-21T04:59:46.099Z">
+<meta property="article:author" content="Yelearn">
+<meta property="article:tag" content="数字图像处理">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="图像">
+<meta property="article:tag" content="openCV">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/662331dd0ea9cb1403ef40e7.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>数字图像处理－图像分割方法 - 叶鹏翔的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yelelalearn.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21863687,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21863687.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>In The Study</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/662331dd0ea9cb1403ef40e7.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数字图像处理－图像分割方法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-21 12:34" pubdate>
+          2024年4月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">数字图像处理－图像分割方法</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2024年4月21日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>我这个人走得很慢，但是我从不后退。——亚伯拉罕·林肯</p>
+</blockquote>
+<p>本文主要介绍图像分割方法中，基于阈值分割的方法；并通过实验进行分析。</p>
+<p><span id="more"></span></p>
+<h1 id="图像分割方法">图像分割方法</h1>
+<ol type="1">
+<li>基于阈值分割方法</li>
+<li>基于边缘分割方法</li>
+<li>基于区域分割方法</li>
+<li>基于特定理论分割方法</li>
+<li>基于深度学习分割方法。</li>
+</ol>
+<h1 id="基于阈值处理的图像分割算法">基于阈值处理的图像分割算法</h1>
+<h2 id="灰度阈值基础">灰度阈值基础</h2>
+<p>给定灰度图像，假设该图像有目标物体和背景像素所构成，现在要从图像中提取目标物体，一个最为直接的方法就是使用一个固定阈值将目标物体像素与背景像素分开，以区域为目标物体区域，否则为背景区域。</p>
+<h2 id="阈值的选择">阈值的选择</h2>
+<ul>
+<li>全局阈值</li>
+<li>自适应阈值</li>
+<li>最优化阈值</li>
+</ul>
+<h2 id="阈值直方图的特点">阈值直方图的特点</h2>
+<p>直方图呈现双峰特征：</p>
+<ul>
+<li>一个峰表示前景</li>
+<li>一个峰表示后景</li>
+</ul>
+<h2 id="全局阈值处理">全局阈值处理</h2>
+<p>当图像中存在较大的灰度变化时，使用全局阈值处理的方法一般就能够取得较好的效果。但我们仍希望对于一幅图像，能够找到一个相对合理的阈值来作为全局阈值。因而就有迭代的阈值图像分割算法。算法流程如下：</p>
+<p>初始化全局阈值</p>
+<p>基于分割该图像，产生两组像素：由灰度值大于的像素组成，由灰度值小于等于的像素组成</p>
+<p>对和像素分别计算平均灰度值和</p>
+<p>计算一个新的阈值</p>
+<p>重复第2到第4步，直到连续迭代中的值间的差小于一个预定的参数为止。</p>
+<p>下面来看一个使用全局阈值的图像分割例子。直接读入图像，先基于Numpy进行灰度化和二值化处理。</p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>img = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br>img1 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)<br>plt.imshow(img1)<br>plt.show()<br><br><span class="hljs-comment"># 灰度化</span><br>y = <span class="hljs-number">0.2126</span>*img[:,:,<span class="hljs-number">2</span>] + <span class="hljs-number">0.7152</span>*img[:,:,<span class="hljs-number">1</span>] + <span class="hljs-number">0.0722</span>*img[:,:,<span class="hljs-number">0</span>]<br>img[:,:,<span class="hljs-number">0</span>] = y<br>img[:,:,<span class="hljs-number">1</span>] = y<br>img[:,:,<span class="hljs-number">2</span>] = y<br><span class="hljs-comment"># 以128为阈值进行二值化</span><br>y[y&gt;=<span class="hljs-number">128</span>] = <span class="hljs-number">255</span><br>y[y&lt;<span class="hljs-number">128</span>] = <span class="hljs-number">0</span><br>img[:,:,<span class="hljs-number">0</span>] = y<br>img[:,:,<span class="hljs-number">1</span>] = y<br>img[:,:,<span class="hljs-number">2</span>] = y<br>plt.imshow(img);<br></code></pre></td></tr></table></figure>
+<p><strong>效果</strong>：</p>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249ad60ea9cb1403c71caa.png" srcset="/img/loading.gif" lazyload
+alt="原图" />
+<figcaption aria-hidden="true">原图</figcaption>
+</figure>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249ad60ea9cb1403c71cd1.png" srcset="/img/loading.gif" lazyload
+alt="分割效果图" />
+<figcaption aria-hidden="true">分割效果图</figcaption>
+</figure>
+<p>opencv也提供了全局阈值的分割方法，处理<strong>代码</strong>如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><br>img1 = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br>img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)<br>plt.imshow(img1)<br>plt.show()<br><br>img = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>,<span class="hljs-number">0</span>)<br>img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)<br>ret, thresh1 = cv2.threshold(img, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>, cv2.THRESH_BINARY)<br>plt.imshow(img)<br>plt.show()<br><br>plt.imshow(thresh1);<br></code></pre></td></tr></table></figure>
+<p>​ <strong>效果</strong>：</p>
+<p><img src="https://pic.imgdb.cn/item/66249ad60ea9cb1403c71caa.png" srcset="/img/loading.gif" lazyload
+alt="原图" /> ​</p>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249ad60ea9cb1403c71d7c.png" srcset="/img/loading.gif" lazyload
+alt="灰度图" />
+<figcaption aria-hidden="true">灰度图</figcaption>
+</figure>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249b270ea9cb1403c7a803.png" srcset="/img/loading.gif" lazyload
+alt="分割后的效果图" />
+<figcaption aria-hidden="true">分割后的效果图</figcaption>
+</figure>
+<p>可以看到：小矮人--艾泽--的胡子几乎不被标记出来。</p>
+<p>一是因为他的胡子覆盖了整个脸部，导致没有明显的边缘信息；</p>
+<p>我们说边缘，其实就是像素值变化大的地方。</p>
+<p>阈值法的核心就是选择阈值，来很好的标记边缘。</p>
+<p>因此我们可以看到阈值法的优点：<strong>快、简单</strong>。</p>
+<p>但是缺点也很明显，不够聪明、灵活，当出现背景颜色变化不明显的时候，可能不能很好的分割边缘。</p>
+<h1 id="大津法otsu">大津法（OTSU）</h1>
+<p>基于阈值的图像二值化方法的一个关键在于如何选定阈值，这可以视作为一个全局寻优问题。大津法也即OTSU法，是由日本学者大津展之于1979年提出的一种图像阈值分割方法。该方法将阈值划分视作是一个统计决策问题，其目的在于将像素分配给两组或多组的过程中使得引入的平均误差最小。大津法给出的方案是使得两组之间的类间方差最大时的阈值为最优阈值。所以大津法也叫最大类间方差法。</p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><br>OTSU = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br><span class="hljs-comment"># img = img.astype(np.float)</span><br>H, W, C = OTSU.shape<br><span class="hljs-comment"># 灰度化</span><br>out = <span class="hljs-number">0.2126</span>*OTSU[:,:,<span class="hljs-number">2</span>] + <span class="hljs-number">0.7152</span>*OTSU[:,:,<span class="hljs-number">1</span>] + <span class="hljs-number">0.0722</span>*OTSU[:,:,<span class="hljs-number">0</span>]<br>out = out.astype(np.uint8)<br><span class="hljs-comment"># 初始化类间方差和最佳阈值</span><br>max_sigma = <span class="hljs-number">0</span><br>max_t = <span class="hljs-number">0</span><br> <br><span class="hljs-comment"># 遍历迭代</span><br><span class="hljs-keyword">for</span> _t <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">255</span>):<br>    <span class="hljs-comment"># 小于阈值t的类v0</span><br>    v0 = out[np.where(out&lt;_t)]<br>    <span class="hljs-comment"># 计算v0均值</span><br>    M0 = np.mean(v0) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(v0) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0.</span><br>    <span class="hljs-comment"># v0类像素占比</span><br>    w0 = <span class="hljs-built_in">len</span>(v0)/(H*W)<br>    <span class="hljs-comment"># 大于阈值t的类v1</span><br>    v1 = out[np.where(out&gt;=_t)]<br>    <span class="hljs-comment"># 计算v1均值</span><br>    M1 = np.mean(v1) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(v1) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0.</span><br>    <span class="hljs-comment"># v1类像素占比</span><br>    w1 = <span class="hljs-built_in">len</span>(v1)/(H*W)<br>    <span class="hljs-comment"># 类间方差</span><br>    Sb2 = w0*w1*((M0-M1)**<span class="hljs-number">2</span>)<br>    <span class="hljs-comment"># 寻优</span><br>    <span class="hljs-keyword">if</span> Sb2 &gt; max_sigma:<br>        max_sigma = Sb2<br>        max_t = _t<br>        <br><span class="hljs-comment"># 打印最佳阈值        </span><br><span class="hljs-built_in">print</span>(max_t)<br></code></pre></td></tr></table></figure>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>108</p>
+</blockquote>
+<p>最佳阈值是108，带入进行二值化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>OTSU = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br><span class="hljs-comment"># 灰度化</span><br>y = <span class="hljs-number">0.2126</span>*OTSU[:,:,<span class="hljs-number">2</span>] + <span class="hljs-number">0.7152</span>*OTSU[:,:,<span class="hljs-number">1</span>] + <span class="hljs-number">0.0722</span>*OTSU[:,:,<span class="hljs-number">0</span>]<br>img[:,:,<span class="hljs-number">0</span>] = y<br>img[:,:,<span class="hljs-number">1</span>] = y<br>img[:,:,<span class="hljs-number">2</span>] = y<br><span class="hljs-comment"># 以108为阈值进行二值化</span><br>y[y&gt;=<span class="hljs-number">108</span>] = <span class="hljs-number">255</span><br>y[y&lt;<span class="hljs-number">108</span>] = <span class="hljs-number">0</span><br>OTSU[:,:,<span class="hljs-number">0</span>] = y<br>OTSU[:,:,<span class="hljs-number">1</span>] = y<br>OTSU[:,:,<span class="hljs-number">2</span>] = y<br>plt.imshow(OTSU);<br></code></pre></td></tr></table></figure>
+<p><strong>效果：</strong></p>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249b280ea9cb1403c7a82a.png" srcset="/img/loading.gif" lazyload
+alt="效果图" />
+<figcaption aria-hidden="true">效果图</figcaption>
+</figure>
+<p>opencv中直接提供了大津法的实现方法，如下代码所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">img = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br><span class="hljs-comment"># 灰度化</span><br>img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)<br><span class="hljs-comment"># 大津法阈值化处理</span><br>ret, th = cv2.threshold(img, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, cv2.THRESH_BINARY+cv2.THRESH_OTSU)<br>plt.imshow(th);<br></code></pre></td></tr></table></figure>
+<p><img src="https://pic.imgdb.cn/item/66249b280ea9cb1403c7a88f.png" srcset="/img/loading.gif" lazyload
+alt="效果图" /> ​</p>
+<p><strong>对比试验</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 原图</span><br>img1 = cv2.imread(<span class="hljs-string">&#x27;25.png&#x27;</span>)<br>img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)<br>plt.imshow(img1)<br>plt.show()<br><span class="hljs-comment"># 对比全局阈值与大津法</span><br>plt.imshow(thresh1)<br>plt.show()<br>plt.imshow(OTSU);<br></code></pre></td></tr></table></figure>
+<p>​</p>
+<p><img src="https://pic.imgdb.cn/item/66249ad60ea9cb1403c71caa.png" srcset="/img/loading.gif" lazyload
+alt="原图" /> ​</p>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249b270ea9cb1403c7a803.png" srcset="/img/loading.gif" lazyload
+alt="全局阈值效果图" />
+<figcaption aria-hidden="true">全局阈值效果图</figcaption>
+</figure>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249b280ea9cb1403c7a82a.png" srcset="/img/loading.gif" lazyload
+alt="大津法效果图" />
+<figcaption aria-hidden="true">大津法效果图</figcaption>
+</figure>
+<h2 id="实验分析">实验分析</h2>
+<p>可以看到，大津法对于艾泽的帽子，处理的很好。脸颊胡子边缘也处理得当。</p>
+<h2 id="实验小结">实验小结</h2>
+<p>基于阈值的图像分割方法简单直接，计算速度快，在图像灰度差异较大的情况下，是首选的分割方法。</p>
+<p>但阈值分割方法本身也存在抗噪能力弱、使用条件严格等缺点，所以往往会配合图像滤波去噪等方法一起使用。</p>
+<h1 id="backgroundsubtractormog">BackgroundSubtractorMOG</h1>
+<p>这是一个基于混合高斯模型的背景前景分割算法。来自论文：An improved
+adaptive background mixture model for real-time tracking with shadow
+detection。</p>
+<p>它使用的方法是对每个背景像素由k个混合高斯模型进行建模，k通常为3或5。彩色信息在场景中存在时间的比例作为高斯混合模型的权重大小。最有可能的背景颜色信息是停留时间最长且更为静止的。</p>
+<p>编写代码的时候需要使用一个函数来创建的一个背景对象cv2.createBackgroundSubtractorMOG()。</p>
+<p>这里有一些可选参数，如历史时间（length of
+history），高斯模型的数量，阈值等等。这些值全部被设置为缺省。</p>
+<p>获取背景后，进入视频循环，使用函数backgroundsubtractor.apply()
+来获取前景的蒙板。</p>
+<p>函数原型：</p>
+<p>retval = cv.bgsegm.createBackgroundSubtractorMOG( [, history[,
+nmixtures[, backgroundRatio[, noiseSigma]]]] )</p>
+<p>参数：</p>
+<p>history Length of the history.<br />
+</p>
+<p>nmixtures Number of Gaussian mixtures.<br />
+</p>
+<p>backgroundRatio Background ratio.<br />
+</p>
+<p>noiseSigma Noise strength (standard deviation of the brightness or
+each color channel). 0 means some automatic value.</p>
+<p><strong>代码（以弃用）</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br>cap = cv2.VideoCapture(<span class="hljs-number">0</span>)<br>fgbg = cv2.createBackgroundSubtractorMOG()<br><span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>):<br>    ret, frame = cap.read()<br>    fgmask = fgbg.apply(frame)<br>    cv2.imshow(<span class="hljs-string">&#x27;frame&#x27;</span>,fgmask) <br>    <span class="hljs-keyword">if</span> k == <span class="hljs-number">27</span>:<br>        <span class="hljs-keyword">break</span><br>cap.release()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
+<p>cv.bgsegm.createBackgroundSubtractorMOG()</p>
+<p>截至本文编辑发布，查阅发现该方法以弃用【3】；</p>
+<h1 id="backgroundsubtractormog2">BackgroundSubtractorMOG2</h1>
+<p>这个也是以高斯混合模型为基础的背景/前景分割算法。它是以 2004 年 和
+2006 年 Z.Zivkovic 的两篇文章为基础的。
+这个算法的一个特点是它为每一个像素选择一个合适数目的高斯分布。(上一个方法中我们使用是
+K 高斯分布)。</p>
+<p>这样就会对由于亮度等发生变化引起的场景变化产生更好的适应。</p>
+<p>和前面一样我们需要创建一个背景对象。但在这里我们我们可以选择是否检测阴影。如果
+detectShadows =
+True(默认值)，它就会检测并将影子标记出来，但是这样做会降低处理速度。影子会被标记为灰色。</p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br>cap = cv2.VideoCapture(<span class="hljs-number">0</span>)<br><br>fgbg = cv2.createBackgroundSubtractorMOG2()<br><br><span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>):<br>    ret, frame = cap.read()<br><br>    fgmask = fgbg.apply(frame)<br><br>    cv2.imshow(<span class="hljs-string">&#x27;org&#x27;</span>,frame)<br>    cv2.imshow(<span class="hljs-string">&#x27;frame&#x27;</span>,fgmask)<br>    k = cv2.waitKey(<span class="hljs-number">30</span>) &amp; <span class="hljs-number">0xff</span><br>    <span class="hljs-keyword">if</span> k == <span class="hljs-number">27</span>:<br>        <span class="hljs-keyword">break</span><br><br>cap.release()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
+<h2 id="实验结果">实验结果</h2>
+<figure>
+<img src="https://pic.imgdb.cn/item/66249ad50ea9cb1403c71c48.gif" srcset="/img/loading.gif" lazyload
+alt="实验视频" />
+<figcaption aria-hidden="true">实验视频</figcaption>
+</figure>
+<p>该方法对亮度变换非常敏感！</p>
+<h1 id="总结">总结</h1>
+<p>本文对图像分割方法中的基于阈值分割方法进行代码复现，并参考资料进行其他方法的比较实验。实验效果显示完美。</p>
+<h1 id="参考链接">参考链接：</h1>
+<p>【1】https://blog.csdn.net/weixin_37737254/article/details/120610103</p>
+<p>【2】https://blog.csdn.net/tengfei461807914/article/details/81588808</p>
+<p>【3】https://blog.csdn.net/u014737138/article/details/80389977</p>
+<p>【4】<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31103280#:~:text=%E8%83%8C%E6%99%AF%E5%87%8F%E9%99%A4%20%28Background%20Subtraction%29%E6%98%AF%E8%AE%B8%E5%A4%9A%E5%9F%BA%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E4%B8%BB%E8%A6%81%E9%A2%84%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4%E3%80%82,%E5%A6%82%E6%9E%9C%E6%88%91%E4%BB%AC%E6%9C%89%E5%AE%8C%E6%95%B4%E7%9A%84%E9%9D%99%E6%AD%A2%E7%9A%84%E8%83%8C%E6%99%AF%E5%B8%A7%EF%BC%8C%E9%82%A3%E4%B9%88%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%B8%A7%E5%B7%AE%E6%B3%95%E6%9D%A5%E8%AE%A1%E7%AE%97%E5%83%8F%E7%B4%A0%E5%B7%AE%E4%BB%8E%E8%80%8C%E8%8E%B7%E5%8F%96%E5%88%B0%E5%89%8D%E6%99%AF%E5%AF%B9%E8%B1%A1%E3%80%82%20%E4%BD%86%E6%98%AF%E5%9C%A8%E5%A4%A7%E5%A4%9A%E6%95%B0%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E8%83%BD%E6%B2%A1%E6%9C%89%E8%BF%99%E6%A0%B7%E7%9A%84%E5%9B%BE%E5%83%8F%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E4%BB%8E%E6%88%91%E4%BB%AC%E6%8B%A5%E6%9C%89%E7%9A%84%E4%BB%BB%E4%BD%95%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%8F%90%E5%8F%96%E8%83%8C%E6%99%AF%E3%80%82%20%E5%BD%93%E8%BF%90%E5%8A%A8%E7%89%A9%E4%BD%93%E6%9C%89%E9%98%B4%E5%BD%B1%E6%97%B6%EF%BC%8C%E7%94%B1%E4%BA%8E%E9%98%B4%E5%BD%B1%E4%B9%9F%E5%9C%A8%E7%A7%BB%E5%8A%A8%EF%BC%8C%E6%83%85%E5%86%B5%E4%BC%9A%E5%8F%98%E7%9A%84%E5%8F%98%E5%BE%97%E6%9B%B4%E5%8A%A0%E5%A4%8D%E6%9D%82%E3%80%82%20%E4%B8%BA%E6%AD%A4%E5%BC%95%E5%85%A5%E4%BA%86%E8%83%8C%E6%99%AF%E5%87%8F%E9%99%A4%E7%AE%97%E6%B3%95%EF%BC%8C%E9%80%9A%E8%BF%87%E8%BF%99%E4%B8%80%E6%96%B9%E6%B3%95%E6%88%91%E4%BB%AC%E8%83%BD%E5%A4%9F%E4%BB%8E%E8%A7%86%E9%A2%91%E4%B8%AD%E5%88%86%E7%A6%BB%E5%87%BA%E8%BF%90%E5%8A%A8%E7%9A%84%E7%89%A9%E4%BD%93%E5%89%8D%E6%99%AF%EF%BC%8C%E4%BB%8E%E8%80%8C%E8%BE%BE%E5%88%B0%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%9A%84%E7%9B%AE%E7%9A%84%E3%80%82">zhihulianjie</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="category-chain-item">数字图像处理</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="print-no-link">#数字图像处理</a>
+      
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/%E5%9B%BE%E5%83%8F/" class="print-no-link">#图像</a>
+      
+        <a href="/tags/openCV/" class="print-no-link">#openCV</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数字图像处理－图像分割方法</div>
+      <div>https://yelelalearn.github.io/2024/04/21/4-21blog/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yelearn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年4月21日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年4月21日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/20/4-20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="4-20读书笔记">
+                        <span class="hidden-mobile">4-20读书笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"x7A49f5gA5IVWB4Xp0FgxcXv-gzGzoHsz","appKey":"9tgxMZE38q9kf8iwHtUVUp8s","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
