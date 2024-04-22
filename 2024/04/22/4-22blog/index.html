@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/661e0ae50ea9cb1403e0d7ad.png">
 <meta property="article:published_time" content="2024-04-22T04:38:48.000Z">
-<meta property="article:modified_time" content="2024-04-22T06:05:22.100Z">
+<meta property="article:modified_time" content="2024-04-22T06:08:32.554Z">
 <meta property="article:author" content="Yelearn">
 <meta property="article:tag" content="信号与系统">
 <meta property="article:tag" content="学习笔记">
@@ -270,7 +270,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -336,8 +336,8 @@ class="math inline">\(\sin(t)\)</span>、<span
 class="math inline">\(\cos(t)\)</span>）的叠加，形成一个周期函数。</p>
 <h2 id="虚指数表示">1.(虚)指数表示</h2>
 <p>傅里叶级数指数表示，公式如下： <span class="math display">\[
-\tilde{x}\small(t\small) = \sum^{+\infty}_{n=-\infty} C_ne^{n\omega_0t}\
-\text{(1)}
+\tilde{x}\small(t\small) = \sum^{+\infty}_{n=-\infty}
+C_ne^{n\omega_0t}\text{\quad\quad}(1)
 \]</span> 上面的式子，解释起来，就是由很多个指数函数<span
 class="math inline">\(e^{n\omega_0 t}\)</span>，乘上一个加权值：<span
 class="math inline">\(C_n\)</span>，然后再叠加在一起，形成的<span
@@ -347,7 +347,7 @@ class="math inline">\(C_n\)</span>称作<strong>频谱</strong>。 <span
 class="math inline">\(C_n\)</span>是<strong>复数</strong>。 <span
 class="math display">\[
 C_n = \frac{1}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
-\tilde{x}\small(t\small)\ e^{jn\omega_0t}\ dt\ \text{(2)}
+\tilde{x}\small(t\small)\ e^{jn\omega_0t}\text{\quad\quad}(2)
 \]</span></p>
 <ul>
 <li>上面两个式子总是成对出现；</li>
@@ -358,23 +358,23 @@ C_n = \frac{1}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
 <p>由刚刚我们知道，指数形式有很多优点，但是也有缺点：理论得出的值不好实验表示。</p>
 <p>于是我们必须通过其他的方法来解决这个问题：欧拉公式~秒了！</p>
 <p>回顾一下小学三年级学过的欧拉公式： <span class="math display">\[
-e^ {ix}= (\cos x+i·\sin x)\ \text{(3)}
+e^ {ix}= (\cos x+i·\sin x)\text{\quad\quad}(3)
 \]</span> 如果不会，在自己看<a
 href="%5B欧拉公式_百度百科%20(baidu.com)%5D(https://baike.baidu.com/item/欧拉公式/92066)">百度</a>。（链接贴这里了，自己看）</p>
 <p>回到三角形式，我们知道欧拉公式可以展开成三角形式，所以公式（1）就可以变成：
 <span class="math display">\[
 \tilde{x}\small(t\small) = \sum^{+\infty}_{n=0}
-\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\ \text{(4)}
+\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\text{\quad\quad}(4)
 \]</span> 当然，也可以写成<strong>直流+交流</strong>的形式： <span
 class="math display">\[
 \tilde{x}\small(t\small) =a_0 +\sum^{+\infty}_{n=1}
-\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\ \text{(5)}
+\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\text{\quad\quad}(5)
 \]</span> 所以，我们其实还可以通过欧拉公式变化，得到一个公式： <span
 class="math display">\[
-C_n = \frac{a_n-j·b_n}{2}
+C_n = \frac{a_n-j·b_n}{2}\text{\quad\quad}(6)
 \]</span> 同时我们能变化<span class="math inline">\(C_n\)</span>得到：
 <span class="math display">\[
-C_n=|C_n|·e^{j\varphi_n}
+C_n=|C_n|·e^{j\varphi_n}\text{\quad\quad}(7)
 \]</span> 其中，<span
 class="math inline">\(|C_n|\)</span>我们称其为幅度，他画的图叫<strong>幅度函数</strong>；<span
 class="math inline">\(\varphi_n\)</span>称其为相位，画的图叫<strong>相位函数</strong>。</p>
@@ -389,7 +389,7 @@ a_n =
 b_n =
 \frac{2}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\sin(\omega_0nt)·dt\\
 a_0 = \frac{1}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)·dt\
-\end{cases}
+\end{cases}\text{\quad\quad}(8)
 \]</span></p>
 <h2 id="频谱特点">3.频谱特点</h2>
 <ul>
@@ -411,7 +411,7 @@ class="math display">\[
 a_n =
 \frac{4}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\cos(\omega_0nt)·dt\\
 b_n=0
-\end{cases}
+\end{cases}\text{\quad\quad}(9)
 \]</span></p>
 <ul>
 <li>含有直流和余弦项，不含有正弦项。</li>
@@ -427,7 +427,7 @@ class="math display">\[
 a_n = 0\\
 b_n=
 \frac{4}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\sin(\omega_0nt)·dt
-\end{cases}
+\end{cases}\text{\quad\quad}(10)
 \]</span></p>
 <ul>
 <li>含有正弦项，不含有余弦项和直流分量</li>
@@ -442,7 +442,7 @@ class="math inline">\(T_1\)</span>波。</li>
 </ul>
 <p><span class="math display">\[
 C_n = \frac{2}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
-\tilde{x}\small(t\small)\ e^{j2n\omega_0t}\ dt
+\tilde{x}\small(t\small)\ e^{j2n\omega_0t}\ dt\text{\quad\quad}(11)
 \]</span></p>
 <ul>
 <li>只含有偶次分量，可能有直流分量。</li>
@@ -457,7 +457,8 @@ C_n = \frac{2}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
 </ul>
 <p><span class="math display">\[
 \tilde{x}_1\small(t\small)+\tilde{x}_1\small(t-\frac{T_0}{2}\small) =
-\sum^{+\infty}_{n=-\infty,n为奇} 2C_ne^{-n\omega_0t}
+\sum^{+\infty}_{n=-\infty,n为奇}
+2C_ne^{-n\omega_0t}\text{\quad\quad}(12)
 \]</span></p>
 <ul>
 <li>保留奇次谐波分量，无直流。</li>
