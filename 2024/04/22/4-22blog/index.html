@@ -16,28 +16,27 @@
   <meta name="author" content="Yelearn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="数字图像处理-学习笔记-图像压缩">
+    <meta name="description" content="辛勤的蜜蜂永没有时间悲哀。——布莱克">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字图像处理-学习笔记-图像压缩">
-<meta property="og:url" content="https://yelelalearn.github.io/2024/04/12/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9/index.html">
+<meta property="og:title" content="信号与系统-频域分析">
+<meta property="og:url" content="https://yelelalearn.github.io/2024/04/22/4-22blog/index.html">
 <meta property="og:site_name" content="叶鹏翔的博客">
-<meta property="og:description" content="数字图像处理-学习笔记-图像压缩">
+<meta property="og:description" content="辛勤的蜜蜂永没有时间悲哀。——布莱克">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png">
-<meta property="article:published_time" content="2024-04-11T16:05:46.000Z">
-<meta property="article:modified_time" content="2024-04-14T07:14:30.771Z">
+<meta property="og:image" content="https://yelelalearn.github.io/img/banner.jpg">
+<meta property="article:published_time" content="2024-04-22T04:38:48.000Z">
+<meta property="article:modified_time" content="2024-04-22T06:01:50.490Z">
 <meta property="article:author" content="Yelearn">
+<meta property="article:tag" content="信号与系统">
 <meta property="article:tag" content="学习笔记">
-<meta property="article:tag" content="数字图像处理">
-<meta property="article:tag" content="图像">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png">
+<meta name="twitter:image" content="https://yelelalearn.github.io/img/banner.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数字图像处理-学习笔记-图像压缩 - 叶鹏翔的博客</title>
+  <title>信号与系统-频域分析 - 叶鹏翔的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +230,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://pic.imgdb.cn/item/661b813268eb935713d5b508.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数字图像处理-学习笔记-图像压缩"></span>
+            <span id="subtitle" data-typed-text="信号与系统-频域分析"></span>
           
         </div>
 
@@ -248,8 +247,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-12 00:05" pubdate>
-          2024年4月12日 凌晨
+        <time datetime="2024-04-22 12:38" pubdate>
+          2024年4月22日 下午
         </time>
       </span>
     
@@ -260,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.1k 字
         
       </span>
     
@@ -271,7 +270,7 @@
         
         
         
-          10 分钟
+          9 分钟
         
       </span>
     
@@ -308,12 +307,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数字图像处理-学习笔记-图像压缩</h1>
+            <h1 id="seo-header">信号与系统-频域分析</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年4月14日 下午
+                    本文最后更新于 2024年4月22日 下午
                   
                 
               </p>
@@ -321,146 +320,148 @@
             
               <div class="markdown-body">
                 
-                <h1
-id="数字图像处理-学习笔记-图像压缩">数字图像处理-学习笔记-图像压缩</h1>
-<span id="more"></span>
-<h1 id="图像压缩">6.11 图像压缩</h1>
-<h2 id="图像压缩基础知识">图像压缩基础知识</h2>
-<p><strong>首先</strong></p>
-<p>数据 <span class="math inline">\(\neq\)</span> 信息</p>
-<p>数据是信息的载体。</p>
-<blockquote>
-<p>当我们打电话时，电话对面的人和你交流，我们通过电话传输的是电波，是数据，而对面听到的是你说的话，属于信息。</p>
+                <blockquote>
+<p>辛勤的蜜蜂永没有时间悲哀。——布莱克</p>
 </blockquote>
-<p>图像压缩就是对数据进行压缩。</p>
-<p>图像压缩很有必要</p>
-<h3 id="可行性">可行性</h3>
-<p>改变图像的描述方式可以变更存储空间。</p>
-<blockquote>
-<p>比如我们可以对原来8个红色的像素表示成<code>8 * R</code>，也就是说，原来我们要用八个格子装红色像素的数据，现在只要两个格子。</p>
-</blockquote>
-<p>上面的例子也就是我们所说的：</p>
-<p><em>图像像素存在着大量冗余</em>。</p>
-<p>当然图像视觉感知也存在冗余——也就是我们人眼对于微小的颜色变化是没有感知的，可以把他们用刚刚的方法缩小存储空间。</p>
-<blockquote>
-<p>人眼会忽略微小差距</p>
-</blockquote>
-<h1 id="冗余分析">6.12 冗余分析</h1>
-<h2 id="冗余分类">冗余分类</h2>
+<p><span id="more"></span></p>
+<h1 id="摘要">摘要</h1>
+<p>本文对信号与系统的频域分析进行学习分享以及记录。</p>
+<h1 id="周期信号">周期信号</h1>
+<p>对周期信号做频谱分析，采用的工具是—傅里叶级数（FS）</p>
+<p>频谱的横坐标是<span
+class="math inline">\(\omega_0\)</span>，但它的频谱是离散谱。</p>
+<p>傅里叶级数通俗点解释就是：用很多很多个相同的、已知的函数（比如：<span
+class="math inline">\(e^{t}\)</span>或者<span
+class="math inline">\(\sin(t)\)</span>、<span
+class="math inline">\(\cos(t)\)</span>）的叠加，形成一个周期函数。</p>
+<h2 id="虚指数表示">1.(虚)指数表示</h2>
+<p>傅里叶级数指数表示，公式如下： <span class="math display">\[
+\tilde{x}\small(t\small) = \sum^{+\infty}_{n=-\infty} C_ne^{n\omega_0t}\
+\text{(1)}
+\]</span> 上面的式子，解释起来，就是由很多个指数函数<span
+class="math inline">\(e^{n\omega_0 t}\)</span>，乘上一个加权值：<span
+class="math inline">\(C_n\)</span>，然后再叠加在一起，形成的<span
+class="math inline">\(x\small(t\small)\)</span>。</p>
+<p>其中，我们把<span
+class="math inline">\(C_n\)</span>称作<strong>频谱</strong>。 <span
+class="math inline">\(C_n\)</span>是<strong>复数</strong>。 <span
+class="math display">\[
+C_n = \frac{1}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
+\tilde{x}\small(t\small)\ e^{jn\omega_0t}\ dt\ \text{(2)}
+\]</span></p>
 <ul>
-<li>空间冗余</li>
-<li>时间冗余</li>
-<li>统计冗余</li>
-<li>视觉心理冗余</li>
+<li>上面两个式子总是成对出现；</li>
+<li>傅里叶计数优点：<strong>理论简单</strong>、<strong>简洁</strong>；</li>
+<li>缺点：得到的值是<strong>复数</strong>，实验过程中难以通过测量得到值。（实验仪器只能测实数）</li>
 </ul>
-<h3 id="对于空间冗余">对于空间冗余</h3>
+<h2 id="三角形式">2.三角形式</h2>
+<p>由刚刚我们知道，指数形式有很多优点，但是也有缺点：理论得出的值不好实验表示。</p>
+<p>于是我们必须通过其他的方法来解决这个问题：欧拉公式~秒了！</p>
+<p>回顾一下小学三年级学过的欧拉公式： <span class="math display">\[
+e^ {ix}= (\cos x+i·\sin x)\ \text{(3)}
+\]</span> 如果不会，在自己看<a
+href="%5B欧拉公式_百度百科%20(baidu.com)%5D(https://baike.baidu.com/item/欧拉公式/92066)">百度</a>。（链接贴这里了，自己看）</p>
+<p>回到三角形式，我们知道欧拉公式可以展开成三角形式，所以公式（1）就可以变成：
+<span class="math display">\[
+\tilde{x}\small(t\small) = \sum^{+\infty}_{n=0}
+\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\ \text{(4)}
+\]</span> 当然，也可以写成<strong>直流+交流</strong>的形式： <span
+class="math display">\[
+\tilde{x}\small(t\small) =a_0 +\sum^{+\infty}_{n=1}
+\big[a_n·\cos(n\omega_0t)+b_n·\sin(n\omega_0t)  \big]\ \text{(5)}
+\]</span> 所以，我们其实还可以通过欧拉公式变化，得到一个公式： <span
+class="math display">\[
+C_n = \frac{a_n-j·b_n}{2}
+\]</span> 同时我们能变化<span class="math inline">\(C_n\)</span>得到：
+<span class="math display">\[
+C_n=|C_n|·e^{j\varphi_n}
+\]</span> 其中，<span
+class="math inline">\(|C_n|\)</span>我们称其为幅度，他画的图叫<strong>幅度函数</strong>；<span
+class="math inline">\(\varphi_n\)</span>称其为相位，画的图叫<strong>相位函数</strong>。</p>
+<p>本质上，它们两个构成了<strong>频谱</strong>，分析频谱，其实就是分析这两个东西。</p>
+<hr />
+<p>我们看到公式（5），发现经过变换后，公式里面已经没有复数。只有系数<span
+class="math inline">\(a_n、b_n\)</span>还没确定，对里面的两个系数进行求解，公式如下：
+<span class="math display">\[
+\begin{cases}
+a_n =
+\frac{2}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\cos(\omega_0nt)·dt\\
+b_n =
+\frac{2}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\sin(\omega_0nt)·dt\\
+a_0 = \frac{1}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)·dt\
+\end{cases}
+\]</span></p>
+<h2 id="频谱特点">3.频谱特点</h2>
 <ul>
-<li><p>相邻像素之间存在相关性</p></li>
-<li><p>相应帧之间相关性也很大</p>
-<ul>
-<li>去除冗余的方法：预测、变换</li>
-</ul></li>
+<li>离散型</li>
+<li>发散性</li>
+<li>有效带宽</li>
 </ul>
-<h3 id="对于统计冗余">对于统计冗余</h3>
+<h2 id="周期展开">4.周期展开</h2>
+<p>具有对称特性的傅里叶级数。</p>
+<p>我们对具有特定性质的周期，可以通过数学特性，减少计算量。</p>
+<h3 id="偶对称">1.偶对称</h3>
 <ul>
-<li>信息熵</li>
-<li>信息量</li>
-<li>熵是平均信息量</li>
-<li>信息量公式：<span
-class="math inline">\(I(x_n)=-log_i(P_n)\)</span></li>
-<li>如果以2为底，单位是：比特</li>
-<li>如果以<span class="math inline">\(e\)</span>为底，单位是：奈特</li>
-<li>如果以<span class="math inline">\(10\)</span>为底，单位是哈特</li>
-<li>信息量怎么解释：
-<ul>
-<li>你出现的概率越小，你越不寻常，信息量也就更大；</li>
-<li>你出现的概率越大，你越平凡寻常，信息量也就越小。</li>
-</ul></li>
-<li>等概率的熵最大
-<ul>
-<li>但是我们图片的信息熵不是等概率分布的</li>
-<li>所以可以采用一些方法来减少视觉系统的冗余
-<ul>
-<li>量化（IGS）</li>
-</ul></li>
-</ul></li>
+<li>形式：<span class="math inline">\(\tilde{x}(t) =
+\tilde{x}(-t)\)</span></li>
 </ul>
-<ol type="1">
-<li>编码方式</li>
-</ol>
-<p>原始图像-&gt;去相关–&gt;量化–&gt;熵编码</p>
-<p>解码–&gt;&gt;熵解码–&gt;&gt;解相关</p>
-<ol start="2" type="1">
-<li>去相关技术</li>
-</ol>
+<p>偶对称关于y轴对称，所以只需要计算一半的周期即可。 <span
+class="math display">\[
+\begin{cases}
+a_n =
+\frac{4}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\cos(\omega_0nt)·dt\\
+b_n=0
+\end{cases}
+\]</span></p>
 <ul>
-<li>基于预测</li>
-<li>基于矢量量化</li>
-<li>基于变换</li>
-<li>基于子带变换</li>
+<li>含有直流和余弦项，不含有正弦项。</li>
 </ul>
-<ol start="3" type="1">
-<li>信息熵编码/统计编码：</li>
-</ol>
-<p>利用图像灰度分布统计特性</p>
-<p>均匀的特点，采用不等字长进行编码。</p>
-<h3 id="图像压缩的分类">图像压缩的分类</h3>
+<h3 id="奇对称">2.奇对称</h3>
 <ul>
-<li>无损压缩-可逆</li>
-<li>有损压缩-不可逆</li>
+<li>形式：<span class="math inline">\(\tilde{x}(t) =
+-\tilde{x}(-t)\)</span></li>
 </ul>
-<blockquote>
-<p>常见的图片格式：</p>
+<p>奇对称关于原点对称，所以只需要计算一半的周期即可。 <span
+class="math display">\[
+\begin{cases}
+a_n = 0\\
+b_n=
+\frac{4}{T_0}\int^{t+T}_{t}\tilde{x}\small(t\small)\sin(\omega_0nt)·dt
+\end{cases}
+\]</span></p>
 <ul>
-<li>\1. JPEG (或
-JPG)：广泛用于照片和网页图像，支持<strong>有损压缩</strong>，可以减小文件大小。</li>
-<li>\2.
-PNG：支持透明背景，<strong>无损压缩</strong>，常用于网页设计和图标。</li>
-<li>\3. GIF
-：支持动画和透明背景，但颜色限制较多（最多256色），常用于简单动画和图标。</li>
-<li>\4.
-BMP：位图格式，<strong>通常不进行压缩</strong>，因此文件较大，常用于Windows操作系统。</li>
-<li>\5.
-TIFF：主要用于专业图像存储，支持<strong>无损压缩</strong>和多种颜色深度，常用于印刷行业。</li>
-<li>\6.
-RAW：相机原始数据格式，未经处理的图像文件，保留了拍摄时的全部信息，适合后期编辑。</li>
-<li>\7. SVG ：矢量图像格式，适合图形设计，可以无限放大而不失真。</li>
-<li>\8.
-WebP：由Google开发，旨在提供比JPEG更好的压缩，支持<strong>有损和无损压缩</strong>，以及动画和透明度。</li>
+<li>含有正弦项，不含有余弦项和直流分量</li>
 </ul>
-</blockquote>
-<h1 id="实验">实验</h1>
-<p>用python进行实验</p>
-<h2 id="代码">代码</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入库</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><br><span class="hljs-comment"># 读取图像</span><br>image = cv2.imread(<span class="hljs-string">&#x27;1.1.jpg&#x27;</span>)<br>scale_factor = <span class="hljs-number">0.5</span>  <span class="hljs-comment"># 缩小比例，根据需要调整</span><br>image = cv2.resize(image, <span class="hljs-literal">None</span>, fx=scale_factor, fy=scale_factor)<br><br><span class="hljs-comment"># 保存图片为test1.jpg有损压缩</span><br>cv2.imwrite(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>,image)<br><br><span class="hljs-comment"># 读取test1.jpg文件</span><br>image1 = cv2.imread(<span class="hljs-string">&#x27;test1.jpg&#x27;</span>)<br><br><span class="hljs-comment"># 想减查看原图和读取的图片的差别</span><br>sub = image1-image<br><br><span class="hljs-comment"># 输出图片效果</span><br>cv2.imshow(<span class="hljs-string">&quot;resized_image&quot;</span>, image)<br>cv2.imshow(<span class="hljs-string">&quot;image1&quot;</span>, image1)<br>cv2.imshow(<span class="hljs-string">&quot;sub&quot;</span>, sub)<br><br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
-<h2 id="实验效果图"><strong>实验效果图</strong></h2>
-<h3 id="原图">原图</h3>
-<figure>
-<img src="https://img2.imgtp.com/2024/04/10/3aCYgxgt.jpg" srcset="/img/loading.gif" lazyload
-alt="1.1.jpg" />
-<figcaption aria-hidden="true">1.1.jpg</figcaption>
-</figure>
-<h3 id="保存后的的jpg格式图片">保存后的的jpg格式图片</h3>
-<figure>
-<img src="https://pic.imgdb.cn/item/6618c64368eb93571317d9bb.jpg" srcset="/img/loading.gif" lazyload
-alt="test1.jpg" />
-<figcaption aria-hidden="true">test1.jpg</figcaption>
-</figure>
-<h3 id="和原图相减后">和原图相减后</h3>
-<figure>
-<img src="https://s21.ax1x.com/2024/04/11/pFXWdhj.jpg" srcset="/img/loading.gif" lazyload alt="sub.jpg" />
-<figcaption aria-hidden="true">sub.jpg</figcaption>
-</figure>
-<h2 id="效果分析">效果分析</h2>
+<h3 id="半波重叠">3.半波重叠</h3>
 <ul>
-<li><p>可以看出，保存后的结果和原图的差别不大。</p></li>
-<li><p>当我们进行想减，在显示原图后的结果，可以明显看出差别。</p></li>
-<li><p>图像信息丰富的地方失去了一些细节，但是我们的视觉感知不大；</p></li>
-<li><p>而图像复杂度低的地方损失的像素不是很多。</p></li>
+<li>形式：<span class="math inline">\(\tilde{x}(t) =
+\tilde{x}(t+\frac{T_0}{2})\)</span></li>
+<li>一个周期<span
+class="math inline">\(T_0\)</span>内，刚好存在两个一模一样的周期<span
+class="math inline">\(T_1\)</span>波。</li>
 </ul>
-<h1 id="总结">总结</h1>
-<p>本次实验总结了图像压缩的方法、分类，还提出了一些图片保存的格式，以及通过实验来验证了会有损压缩图片的像素，对未来图片的加密、图片处理来说，可能会造成复原噪点、图像损失。</p>
-<p>但是图像压缩对于网站来说是很有必要的，可以加快网站对图片的加载速度。</p>
+<p><span class="math display">\[
+C_n = \frac{2}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
+\tilde{x}\small(t\small)\ e^{j2n\omega_0t}\ dt
+\]</span></p>
+<ul>
+<li>只含有偶次分量，可能有直流分量。</li>
+</ul>
+<h3 id="半波镜像">4.半波镜像</h3>
+<ul>
+<li>形式：<span class="math inline">\(\tilde{x}(t) =
+-\tilde{x}(t\pm\frac{T_0}{2})\)</span></li>
+<li>令<span class="math inline">\(\tilde{x}\small(t\small)
+=\tilde{x}_1\small(t\small)-\tilde{x}\small(t-\frac{T_0}{2}
+\small)\)</span> 得到：</li>
+</ul>
+<p><span class="math display">\[
+\tilde{x}_1\small(t\small)+\tilde{x}_1\small(t-\frac{T_0}{2}\small) =
+\sum^{+\infty}_{n=-\infty,n为奇} 2C_ne^{-n\omega_0t}
+\]</span></p>
+<ul>
+<li>保留奇次谐波分量，无直流。</li>
+</ul>
 
                 
               </div>
@@ -479,15 +480,8 @@ alt="test1.jpg" />
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="category-chain-item">数字图像处理</a>
+  <a href="/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" class="category-chain-item">信号与系统</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-
   
 
       </span>
@@ -501,11 +495,9 @@ alt="test1.jpg" />
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" class="print-no-link">#信号与系统</a>
+      
         <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#学习笔记</a>
-      
-        <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="print-no-link">#数字图像处理</a>
-      
-        <a href="/tags/%E5%9B%BE%E5%83%8F/" class="print-no-link">#图像</a>
       
     </div>
   
@@ -517,8 +509,8 @@ alt="test1.jpg" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数字图像处理-学习笔记-图像压缩</div>
-      <div>https://yelelalearn.github.io/2024/04/12/数字图像处理-学习笔记-图像压缩/</div>
+      <div>信号与系统-频域分析</div>
+      <div>https://yelelalearn.github.io/2024/04/22/4-22blog/</div>
     </div>
     <div class="license-meta">
       
@@ -530,13 +522,13 @@ alt="test1.jpg" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月12日</div>
+          <div>2024年4月22日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年4月14日</div>
+          <div>2024年4月22日</div>
         </div>
       
       
@@ -567,18 +559,12 @@ alt="test1.jpg" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/13/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="python学习笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python学习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/11/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/" title="我为什么一定要写博客">
-                        <span class="hidden-mobile">我为什么一定要写博客</span>
+                      <a href="/2024/04/21/4-21blog/" title="数字图像处理－图像分割方法">
+                        <span class="hidden-mobile">数字图像处理－图像分割方法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
