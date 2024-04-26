@@ -309,11 +309,13 @@
           <article class="post-content mx-auto">
             <h1 id="seo-header">信号与系统-频域分析</h1>
             
-              <p id="updated-time" class="note note-info" style="">
+              <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024年4月22日 下午
+                    本文最后更新于 2024-04-22T14:08:32+08:00
                   
+                  
+
                 
               </p>
             
@@ -788,6 +790,33 @@ C_n = \frac{2}{T_0}\int^{\frac{T}{2}}_{-\frac{T}{2}}\
   
 
 
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
 
 
   
