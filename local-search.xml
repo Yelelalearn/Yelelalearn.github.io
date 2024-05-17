@@ -8,7 +8,7 @@
     <link href="/2024/05/17/5-17blog/"/>
     <url>/2024/05/17/5-17blog/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>感谢各位百忙之中观看我的简历！</p></blockquote><span id="more"></span><h1 id="我的简历">我的简历</h1><h2 id="个人信息">个人信息</h2><p><strong>姓　 名：</strong> 叶鹏翔</p><p><strong>性 别：</strong> 男</p><p><strong>年 龄：</strong>　21岁</p><p><strong>学 历：</strong> 本科</p><p><strong>联系电话：</strong> 18259248018</p><p><strong>个人网站：</strong> <ahref="https://yelelalearn.top/">https://yelelalearn.top</a></p><p><strong>项目经验：</strong> 1年</p><p><strong>邮</strong> <strong>箱：</strong> <ahref="mailto:2948234682@qq.com">2948234682@qq.com</a></p><h2 id="求职意向">求职意向</h2><p><strong>工作性质：</strong> <strong>全职</strong></p><p><strong>目标职能：</strong><strong>算法工程师等专业相关岗位</strong></p><p><strong>目标薪资：</strong> <strong>面议</strong></p><p><strong>目标地点：</strong> <strong>厦门</strong></p><h2 id="教育经历">教育经历</h2><ul><li>2021.9-2025.6 人工智能|闽南师范大学</li></ul><p>主修课程：机器学习、OpenCV图像处理、数据结构与算法、深度学习、数据分析等。</p><h2 id="专业技能">专业技能</h2><ol type="1"><li><p>熟悉机器学习算法，能对常见分类任务提出解决方案，部署基础设施；</p></li><li><p>熟练掌握<strong>Python</strong>、<strong>Matlab</strong>语言，熟练使用<strong>Numpy</strong>、<strong>Pandas等</strong>工具进行数据分析，熟练使用<strong>OpenCV等</strong>工具进行图像处理。</p></li><li><p>了解深度学习常用框架，如<strong>Keras</strong>、<strong>Tensorflow</strong>、<strong>PyTorch</strong>、<strong>SKlearn等</strong>，了解其底层细节。</p></li><li><p>熟悉神经网络及常用的模型，如<strong>CNN</strong>，<strong>RNN</strong>，<strong>Transformer等</strong>，并能进行模型复现学习；</p></li></ol><h2 id="项目经历">项目经历</h2><p><strong>2023.06–2024.05</strong><em>基于多混沌映射与DNA计算的图像加密算法</em> |<strong>大创项目国家级</strong></p><ul><li><p>担任项目负责人，负责项目全程的流程安排，<strong>4</strong>名成员的任务分配和图像加密算法的主体研究。</p></li><li><p>随着国家安全和个人隐私的保护愈发重要，常见的加密算法难以抵御复杂多变的网络攻击。本项目实现了<strong>一种基于多混沌映射和DNA计算的图像加密方法</strong>，对数字图像进行加密。通过实验证明，本算法能够在图像的统计特性、视觉质量以及常见的图像攻击方面表现优异。</p></li><li><p>在该项目，本人定期组织会议并主持。期间，小组成员共查阅图像加密技术相关论文至少<strong>10篇</strong>。通过定期组会的相互交流，与团队成员一起修改算法流程，成功完成加密算法方案。</p></li><li><p>项目采用<strong>Python</strong>语言编程算法主体，使用包括<strong>Opencv</strong>，<strong>Numpy等工具</strong>进行图像加密和数据处理；使用<strong>Matlab</strong>语言进行实验验证，包括验证图像信息熵、PSNR分析等方面。</p></li><li><p>项目已申请<strong>新型专利1项</strong>。撰写<strong>论文1篇</strong>。</p></li></ul><p><strong>2023.06–2024.05</strong><em>基于残差生成对抗网络的南靖土楼照片超分辨重建</em> <strong>|大创项目国家级</strong></p><ul><li><p>项目的参与者，参与图像的超分辨重建项目，策划书的撰写，环境的搭建和代码的调试。</p></li><li><p>南靖土楼是福建省著名的文化遗产，其建筑工艺与风格具有独特价值。但时过境迁，早期土楼的一些绘画装饰、建筑纹理只存在与老照片中，许多老照片随着时间的推移而模糊。本项目希望通过图像的超分辨重建技术，来恢复老照片，并以此恢复其往日色彩。本项目从<strong>生成对抗网络</strong>、<strong>损失函数优化</strong>、<strong>高效远程注意力机制等</strong>关键技术，研究<strong>图像的超分辨重建</strong>。</p></li><li><p>小组开展每周<strong>1</strong>次的组会，对当前先进的超分辨图像技术进行学习了解。截至项目结束，本人至少汇报高质量计算机视觉论文约<strong>8篇</strong>，学习如<strong>swimIR</strong>、<strong>ELAN</strong>、<strong>HIT等</strong>模型算法和框架。</p></li><li><p>协助成员进行项目模型环境的搭建，并帮助组内不熟悉神经网络的同学，提供自身专业的技术支持和知识讲解。熟练使用<strong>GitHub</strong>上的开源代码，实现<strong>ELAN、swimIR等</strong>高质量图像处理模型的复现，熟悉使用<strong>PyTorch</strong>、<strong>SKlearn等</strong>机器学习工具，了解其实现细节。</p></li><li><p>项目已申请<strong>专利论文2篇</strong>。</p></li></ul><h2 id="获奖证书">获奖证书</h2><ol type="1"><li><p>2023年全国大学生数学建模竞赛福建赛区<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学大学生数学建模竞赛<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学第九届“互联网+”大学生创新创业大赛院<strong>优秀奖</strong></p></li></ol><h2 id="自我评价">自我评价</h2><p>1、<strong>适应能力强：</strong>有过不同团队合作经验，能在很短时间融入团队；</p><p>2、<strong>学习能力强：</strong>逻辑思维能力强，思路清楚，对新知识有着强烈的好奇心；</p><p>3、<strong>活动策划能力：</strong>曾担任院自律会约<strong>200</strong>人的全体委员会的策划之一；主持过各类大、小型团建、科研等活动。</p><p>4、<strong>办公能力好：</strong>曾担任院自律会办公室部长一职，熟练使用<strong>WORD</strong>、<strong>EXCEL</strong>、<strong>PPT</strong>等办公软件。</p><h2 id="他人评价">他人评价</h2><p>1、<strong>班级班长评价：</strong></p><p>首先，性格上善于展现自己。其次，办事能力强，执行力挺强，学习理解东西快。</p><p>2、<strong>辅导员评价：</strong>为人踏实，作风严谨，专业基础扎实，沟通协调能力强。</p><p>3、<strong>来自于一个私营企业主的评价：</strong></p><p>普通人等待机会，优秀人把握机会，卓越人创造机会，</p><p>对于一个善于整合资源的你，未来你不卓越谁卓越。</p><h2 id="证明材料">证明材料</h2><figure><img src="https://pic.imgdb.cn/item/66477277d9c307b7e991985b.jpg"alt="应用新型专利受理证明" /><figcaption aria-hidden="true">应用新型专利受理证明</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1TeI.jpg"alt="数学建模校赛一等奖证书" /><figcaption aria-hidden="true">数学建模校赛一等奖证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku17wt.jpg"alt="数学建模省一证书" /><figcaption aria-hidden="true">数学建模省一证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1qFf.png"alt="大创-图像加密-论文部分实验结果图" /><figcaptionaria-hidden="true">大创-图像加密-论文部分实验结果图</figcaption></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>感谢各位百忙之中观看我的简历！</p></blockquote><span id="more"></span><h1 id="我的简历">我的简历</h1><h2 id="个人信息man_student">个人信息:man_student:</h2><p><strong>姓 名：</strong> 叶鹏翔</p><p><strong>性 别：</strong> 男</p><p><strong>年 龄：</strong> 21岁</p><p><strong>学 历：</strong> 本科</p><p><strong>项目经验：</strong> 1年</p><p><strong>联系电话:phone:</strong> 18259248018</p><p><strong>个人邮箱:e-mail:</strong> <ahref="mailto:2948234682@qq.com">2948234682@qq.com</a></p><p><strong>个人网站:spider_web:</strong> <ahref="https://yelelalearn.top/">https://yelelalearn.top</a></p><h2 id="求职意向tada">求职意向:tada:</h2><p><strong>工作性质：</strong> <strong>全职</strong></p><p><strong>目标职能：</strong> <strong>算法工程师等专业相关岗位</strong></p><p><strong>目标薪资：</strong> <strong>面议 </strong></p><p><strong>目标地点：</strong> <strong>厦门</strong></p><h2 id="教育经历bookmark_tabs">教育经历:bookmark_tabs:</h2><ul><li>2021.9-2025.6 人工智能|闽南师范大学</li></ul><p>主修课程：机器学习、OpenCV图像处理、数据结构与算法、深度学习、数据分析等。</p><h2 id="专业技能">专业技能📕</h2><ol type="1"><li><p>熟悉机器学习算法，能对常见分类任务提出解决方案，部署基础设施；</p></li><li><p>熟练掌握<strong>Python</strong>、<strong>Matlab</strong>语言，熟练使用<strong>Numpy</strong>、<strong>Pandas等</strong>工具进行数据分析，熟练使用<strong>OpenCV等</strong>工具进行图像处理。</p></li><li><p>了解深度学习常用框架，如<strong>Keras</strong>、<strong>Tensorflow</strong>、<strong>PyTorch</strong>、<strong>SKlearn等</strong>，了解其底层细节。</p></li><li><p>熟悉神经网络及常用的模型，如<strong>CNN</strong>，<strong>RNN</strong>，<strong>Transformer等</strong>，并能进行模型复现学习；</p></li></ol><h2 id="项目经历golf">项目经历:golf:</h2><p><strong>2023.06–2024.05</strong><em>基于多混沌映射与DNA计算的图像加密算法</em> |<strong>大创项目国家级</strong></p><ul><li><p>担任项目负责人，负责项目全程的流程安排，<strong>4</strong>名成员的任务分配和图像加密算法的主体研究。</p></li><li><p>随着国家安全和个人隐私的保护愈发重要，常见的加密算法难以抵御复杂多变的网络攻击。本项目实现了<strong>一种基于多混沌映射和DNA计算的图像加密方法</strong>，对数字图像进行加密。通过实验证明，本算法能够在图像的统计特性、视觉质量以及常见的图像攻击方面表现优异。</p></li><li><p>在该项目，本人定期组织会议并主持。期间，小组成员共查阅图像加密技术相关论文至少<strong>10篇</strong>。通过定期组会的相互交流，与团队成员一起修改算法流程，成功完成加密算法方案。</p></li><li><p>项目采用<strong>Python</strong>语言编程算法主体，使用包括<strong>Opencv</strong>，<strong>Numpy等工具</strong>进行图像加密和数据处理；使用<strong>Matlab</strong>语言进行实验验证，包括验证图像信息熵、PSNR分析等方面。</p></li><li><p>项目已申请<strong>新型专利1项</strong>。撰写<strong>论文1篇</strong>。</p></li></ul><p><strong>2023.06–2024.05</strong><em>基于残差生成对抗网络的南靖土楼照片超分辨重建</em> <strong>|大创项目国家级</strong></p><ul><li><p>项目的参与者，参与图像的超分辨重建项目，策划书的撰写，环境的搭建和代码的调试。</p></li><li><p>南靖土楼是福建省著名的文化遗产，其建筑工艺与风格具有独特价值。但时过境迁，早期土楼的一些绘画装饰、建筑纹理只存在与老照片中，许多老照片随着时间的推移而模糊。本项目希望通过图像的超分辨重建技术，来恢复老照片，并以此恢复其往日色彩。本项目从<strong>生成对抗网络</strong>、<strong>损失函数优化</strong>、<strong>高效远程注意力机制等</strong>关键技术，研究<strong>图像的超分辨重建</strong>。</p></li><li><p>小组开展每周<strong>1</strong>次的组会，对当前先进的超分辨图像技术进行学习了解。截至项目结束，本人至少汇报高质量计算机视觉论文约<strong>8篇</strong>，学习如<strong>swimIR</strong>、<strong>ELAN</strong>、<strong>HIT等</strong>模型算法和框架。</p></li><li><p>协助成员进行项目模型环境的搭建，并帮助组内不熟悉神经网络的同学，提供自身专业的技术支持和知识讲解。熟练使用<strong>GitHub</strong>上的开源代码，实现<strong>ELAN、swimIR等</strong>高质量图像处理模型的复现，熟悉使用<strong>PyTorch</strong>、<strong>SKlearn等</strong>机器学习工具，了解其实现细节。</p></li><li><p>项目已申请<strong>专利论文2篇</strong>。</p></li></ul><h2 id="获奖证书medal_military">获奖证书:medal_military:</h2><ol type="1"><li><p>2023年全国大学生数学建模竞赛福建赛区<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学大学生数学建模竞赛<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学第九届“互联网+”大学生创新创业大赛院<strong>优秀奖</strong></p></li></ol><h2 id="自我评价speech_balloon">自我评价:speech_balloon:</h2><p>1、<strong>适应能力强：</strong>有过不同团队合作经验，能在很短时间融入团队；</p><p>2、<strong>学习能力强：</strong>逻辑思维能力强，思路清楚，对新知识有着强烈的好奇心；</p><p>3、<strong>活动策划能力：</strong>曾担任院自律会约<strong>200</strong>人的全体委员会的策划之一；主持过各类大、小型团建、科研等活动。</p><p>4、<strong>办公能力好：</strong>曾担任院自律会办公室部长一职，熟练使用<strong>WORD</strong>、<strong>EXCEL</strong>、<strong>PPT</strong>等办公软件。</p><h2 id="他人评价ear">他人评价:ear:</h2><p>1、<strong>班级班长评价：</strong></p><p>首先，性格上善于展现自己。其次，办事能力强，执行力挺强，学习理解东西快。</p><p>2、<strong>辅导员评价：</strong>为人踏实，作风严谨，专业基础扎实，沟通协调能力强。</p><p>3、<strong>来自于一个私营企业主的评价：</strong></p><p>普通人等待机会，优秀人把握机会，卓越人创造机会，</p><p>对于一个善于整合资源的你，未来你不卓越谁卓越。</p><h2 id="证明材料book">证明材料:book:</h2><figure><img src="https://pic.imgdb.cn/item/66477277d9c307b7e991985b.jpg"alt="应用新型专利受理证明" /><figcaption aria-hidden="true">应用新型专利受理证明</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1TeI.jpg"alt="数学建模校赛一等奖证书" /><figcaption aria-hidden="true">数学建模校赛一等奖证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku17wt.jpg"alt="数学建模省一证书" /><figcaption aria-hidden="true">数学建模省一证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1qFf.png"alt="大创-图像加密-论文部分实验结果图" /><figcaptionaria-hidden="true">大创-图像加密-论文部分实验结果图</figcaption></figure>]]></content>
     
     
     <categories>
@@ -163,11 +163,11 @@
     
     <tags>
       
+      <tag>图像</tag>
+      
       <tag>计算机视觉</tag>
       
       <tag>图像处理</tag>
-      
-      <tag>图像</tag>
       
     </tags>
     
@@ -277,11 +277,11 @@
     
     <tags>
       
-      <tag>图像</tag>
-      
       <tag>数字图像处理</tag>
       
       <tag>python</tag>
+      
+      <tag>图像</tag>
       
       <tag>openCV</tag>
       
@@ -339,13 +339,13 @@
     
     <tags>
       
-      <tag>学习笔记</tag>
-      
-      <tag>计算机视觉</tag>
+      <tag>python</tag>
       
       <tag>图像</tag>
       
-      <tag>python</tag>
+      <tag>学习笔记</tag>
+      
+      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -399,11 +399,11 @@
     
     <tags>
       
+      <tag>图像</tag>
+      
       <tag>计算机视觉</tag>
       
       <tag>图像处理</tag>
-      
-      <tag>图像</tag>
       
     </tags>
     
@@ -513,11 +513,11 @@
     
     <tags>
       
-      <tag>图像</tag>
-      
       <tag>数字图像处理</tag>
       
       <tag>python</tag>
+      
+      <tag>图像</tag>
       
     </tags>
     
@@ -573,11 +573,11 @@
     
     <tags>
       
-      <tag>学习笔记</tag>
+      <tag>数字图像处理</tag>
       
       <tag>图像</tag>
       
-      <tag>数字图像处理</tag>
+      <tag>学习笔记</tag>
       
     </tags>
     
@@ -666,11 +666,11 @@
     
     <tags>
       
+      <tag>图像</tag>
+      
       <tag>计算机视觉</tag>
       
       <tag>图像处理</tag>
-      
-      <tag>图像</tag>
       
     </tags>
     
