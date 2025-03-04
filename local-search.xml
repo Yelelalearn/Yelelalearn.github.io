@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>我的简历</title>
-    <link href="/2024/05/17/5-17blog/"/>
-    <url>/2024/05/17/5-17blog/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>感谢各位百忙之中观看我的简历！</p></blockquote><span id="more"></span><h1 id="我的简历">我的简历</h1><h2 id="个人信息">个人信息👨‍🎓</h2><p><strong>姓 名：</strong> 叶鹏翔</p><p><strong>性 别：</strong> 男</p><p><strong>年 龄：</strong> 21岁</p><p><strong>学 历：</strong> 本科</p><p><strong>项目经验：</strong> 1年</p><p><strong>联系电话☎</strong> 18259248018</p><p><strong>个人邮箱✉</strong> <ahref="mailto:2948234682@qq.com">2948234682@qq.com</a></p><p><strong>个人网站💻</strong> <ahref="https://yelelalearn.top/">https://yelelalearn.top</a></p><h2 id="求职意向tada">求职意向:tada:</h2><p><strong>工作性质：</strong> <strong>全职</strong></p><p><strong>目标职能：</strong> <strong>算法工程师等专业相关岗位</strong></p><p><strong>目标薪资：</strong> <strong>面议 </strong></p><p><strong>目标地点：</strong> <strong>厦门</strong></p><h2 id="教育经历">教育经历📑</h2><ul><li>2021.9-2025.6 人工智能|闽南师范大学</li></ul><p>主修课程：机器学习、OpenCV图像处理、数据结构与算法、深度学习、数据分析等。</p><h2 id="专业技能">专业技能📕</h2><ol type="1"><li><p>熟悉机器学习算法，能对常见分类任务提出解决方案，部署基础设施；</p></li><li><p>熟练掌握<strong>Python</strong>、<strong>Matlab</strong>语言，熟练使用<strong>Numpy</strong>、<strong>Pandas等</strong>工具进行数据分析，熟练使用<strong>OpenCV等</strong>工具进行图像处理。</p></li><li><p>了解深度学习常用框架，如<strong>Keras</strong>、<strong>Tensorflow</strong>、<strong>PyTorch</strong>、<strong>SKlearn等</strong>，了解其底层细节。</p></li><li><p>熟悉神经网络及常用的模型，如<strong>CNN</strong>，<strong>RNN</strong>，<strong>Transformer等</strong>，并能进行模型复现学习；</p></li></ol><h2 id="项目经历">项目经历⛳</h2><p><strong>2023.06–2024.05</strong><em>基于多混沌映射与DNA计算的图像加密算法</em> |<strong>大创项目国家级</strong></p><ul><li><p>担任项目负责人，负责项目全程的流程安排，<strong>4</strong>名成员的任务分配和图像加密算法的主体研究。</p></li><li><p>随着国家安全和个人隐私的保护愈发重要，常见的加密算法难以抵御复杂多变的网络攻击。本项目实现了<strong>一种基于多混沌映射和DNA计算的图像加密方法</strong>，对数字图像进行加密。通过实验证明，本算法能够在图像的统计特性、视觉质量以及常见的图像攻击方面表现优异。</p></li><li><p>在该项目，本人定期组织会议并主持。期间，小组成员共查阅图像加密技术相关论文至少<strong>10篇</strong>。通过定期组会的相互交流，与团队成员一起修改算法流程，成功完成加密算法方案。</p></li><li><p>项目采用<strong>Python</strong>语言编程算法主体，使用包括<strong>Opencv</strong>，<strong>Numpy等工具</strong>进行图像加密和数据处理；使用<strong>Matlab</strong>语言进行实验验证，包括验证图像信息熵、PSNR分析等方面。</p></li><li><p>项目已申请<strong>新型专利1项</strong>。撰写<strong>论文1篇</strong>。</p></li></ul><p><strong>2023.06–2024.05</strong><em>基于残差生成对抗网络的南靖土楼照片超分辨重建</em> <strong>|大创项目国家级</strong></p><ul><li><p>项目的参与者，参与图像的超分辨重建项目，策划书的撰写，环境的搭建和代码的调试。</p></li><li><p>南靖土楼是福建省著名的文化遗产，其建筑工艺与风格具有独特价值。但时过境迁，早期土楼的一些绘画装饰、建筑纹理只存在与老照片中，许多老照片随着时间的推移而模糊。本项目希望通过图像的超分辨重建技术，来恢复老照片，并以此恢复其往日色彩。本项目从<strong>生成对抗网络</strong>、<strong>损失函数优化</strong>、<strong>高效远程注意力机制等</strong>关键技术，研究<strong>图像的超分辨重建</strong>。</p></li><li><p>小组开展每周<strong>1</strong>次的组会，对当前先进的超分辨图像技术进行学习了解。截至项目结束，本人至少汇报高质量计算机视觉论文约<strong>8篇</strong>，学习如<strong>swimIR</strong>、<strong>ELAN</strong>、<strong>HIT等</strong>模型算法和框架。</p></li><li><p>协助成员进行项目模型环境的搭建，并帮助组内不熟悉神经网络的同学，提供自身专业的技术支持和知识讲解。熟练使用<strong>GitHub</strong>上的开源代码，实现<strong>ELAN、swimIR等</strong>高质量图像处理模型的复现，熟悉使用<strong>PyTorch</strong>、<strong>SKlearn等</strong>机器学习工具，了解其实现细节。</p></li><li><p>项目已申请<strong>专利论文2篇</strong>。</p></li></ul><h2 id="获奖证书">获奖证书🎖</h2><ol type="1"><li><p>2023年全国大学生数学建模竞赛福建赛区<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学大学生数学建模竞赛<strong>一等奖</strong></p></li><li><p>2023年闽南师范大学第九届“互联网+”大学生创新创业大赛院<strong>优秀奖</strong></p></li></ol><h2 id="自我评价">自我评价💬</h2><p>1、<strong>适应能力强：</strong>有过不同团队合作经验，能在很短时间融入团队；</p><p>2、<strong>学习能力强：</strong>逻辑思维能力强，思路清楚，对新知识有着强烈的好奇心；</p><p>3、<strong>活动策划能力：</strong>曾担任院自律会约<strong>200</strong>人的全体委员会的策划之一；主持过各类大、小型团建、科研等活动。</p><p>4、<strong>办公能力好：</strong>曾担任院自律会办公室部长一职，熟练使用<strong>WORD</strong>、<strong>EXCEL</strong>、<strong>PPT</strong>等办公软件。</p><h2 id="他人评价">他人评价🗨</h2><p>1、<strong>班级班长评价：</strong></p><p>首先，性格上善于展现自己。其次，办事能力强，执行力挺强，学习理解东西快。</p><p>2、<strong>辅导员评价：</strong>为人踏实，作风严谨，专业基础扎实，沟通协调能力强。</p><p>3、<strong>来自于一个私营企业主的评价：</strong></p><p>普通人等待机会，优秀人把握机会，卓越人创造机会，</p><p>对于一个善于整合资源的你，未来你不卓越谁卓越。</p><h2 id="证明材料">证明材料⁉</h2><figure><img src="https://pic.imgdb.cn/item/66477277d9c307b7e991985b.jpg"alt="应用新型专利受理证明" /><figcaption aria-hidden="true">应用新型专利受理证明</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1TeI.jpg"alt="数学建模校赛一等奖证书" /><figcaption aria-hidden="true">数学建模校赛一等奖证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku17wt.jpg"alt="数学建模省一证书" /><figcaption aria-hidden="true">数学建模省一证书</figcaption></figure><figure><img src="https://s21.ax1x.com/2024/05/17/pku1qFf.png"alt="大创-图像加密-论文部分实验结果图" /><figcaptionaria-hidden="true">大创-图像加密-论文部分实验结果图</figcaption></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>简历</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>简历</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>《认知觉醒：开启自我改变的原动力》-读书笔记-1</title>
     <link href="/2024/04/29/4-29blog/"/>
     <url>/2024/04/29/4-29blog/</url>
@@ -339,11 +314,11 @@
     
     <tags>
       
-      <tag>学习笔记</tag>
-      
       <tag>python</tag>
       
       <tag>图像</tag>
+      
+      <tag>学习笔记</tag>
       
       <tag>计算机视觉</tag>
       
@@ -470,33 +445,6 @@
   
   
   <entry>
-    <title>今日水论文-停更一天</title>
-    <link href="/2024/04/15/%E4%BB%8A%E6%97%A5%E6%B0%B4%E8%AE%BA%E6%96%87-%E5%81%9C%E6%9B%B4%E4%B8%80%E5%A4%A9/"/>
-    <url>/2024/04/15/%E4%BB%8A%E6%97%A5%E6%B0%B4%E8%AE%BA%E6%96%87-%E5%81%9C%E6%9B%B4%E4%B8%80%E5%A4%A9/</url>
-    
-    <content type="html"><![CDATA[<h1 id="今天改论文-停更一天">今天改论文-停更一天</h1><span id="more"></span><h1 id="往期图片分享">往期图片分享</h1><p><imgsrc="https://pic.imgdb.cn/item/661b828768eb935713d67a33.png" /></p><p><imgsrc="https://pic.imgdb.cn/item/661b813268eb935713d5b4c6.png" /></p><p><imgsrc="https://pic.imgdb.cn/item/661b813268eb935713d5b508.png" /></p><p><imgsrc="https://pic.imgdb.cn/item/661b828968eb935713d67ace.png" /></p><p><imgsrc="https://pic.imgdb.cn/item/661b82f868eb935713d6b96a.png" /></p><p><img src="https://s21.ax1x.com/2024/04/11/pFXmRYV.jpg" /></p><p><img src="https://s21.ax1x.com/2024/04/11/pFXm2F0.jpg" /></p><p><img src="https://s21.ax1x.com/2024/04/10/pFOcMcT.jpg" /></p><p><img src="https://s21.ax1x.com/2024/04/10/pFOcu90.jpg" /></p><p><img src="https://s21.ax1x.com/2024/04/10/pFOcmhq.jpg" /></p><p><img src="https://s21.ax1x.com/2024/04/08/pFLJe5d.png" /></p><p><img src="https://s21.ax1x.com/2024/04/07/pFqfvBF.jpg" /></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>小记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>说明</tag>
-      
-      <tag>图片</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>数字图像处理-直方图分析</title>
     <link href="/2024/04/14/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%88%86%E6%9E%90/"/>
     <url>/2024/04/14/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%88%86%E6%9E%90/</url>
@@ -573,38 +521,11 @@
     
     <tags>
       
-      <tag>学习笔记</tag>
-      
       <tag>数字图像处理</tag>
       
       <tag>图像</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>我为什么一定要写博客</title>
-    <link href="/2024/04/11/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2024/04/11/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
-    
-    <content type="html"><![CDATA[<p>本文解释了我为什么们一定要搞一个博客，为什么要写作。</p><p><span id="more"></span></p><h1 id="为什么要搞博客">为什么要搞博客</h1><p>我要搞博客？其实在很久之前，我就已经在心里有过构想：为什么不自己搞一个博客？</p><p>起因是自己对于每天的学习笔记，每天的学习到的知识，想做一个梳理的时候，发现自己没有输出，没有反馈，自己做的事不知道是不是正确的。</p><p>所以我的第一篇博客，就将自己曾经翻译的一篇论文（还有自己的思考）发布到了csdn里。</p><p>刚开始也没什么，但是看到博客阅读量不断上来后，自己的自豪和骄傲就也跟着上来了，但是当时的自己没有付诸行动，只是想着：要不？自己搞一个博客？</p><p>后面行动的契机是参加简历比赛。</p><p>当老师说，如果别人要看你的博客，要输入一大段的网址，那估计很大概率不会去看，因为呈现在纸面上的东西，如果很长，很麻烦，那么就会很少有人关注。</p><p>我说，那我做一个博客吧。</p><h1 id="写博客不是真的一时兴起">写博客不是真的一时兴起</h1><p>我读过一本书，《认知觉醒》，是一本讲诉你是为什么会被手机偷走时间、为什么每天嘴上懊悔着今天一事无成，但依旧刷着手机，书里给了我很多答案。</p><p>书里作者也曾每天浑浑噩噩，耍耍手机，每天到家也是无心做其他事，只有刷手机。</p><p>早上立的宏图大志，晚上回家到头就刷手机。</p><p>我当时也这样，浑浑噩噩，耍耍手机，后面真的觉得，自己是不是应该改变一下自己。</p><p>书里给个神奇的方法：早、写、读、跑、冥想。</p><hr /><p>早：早起。我翻看优秀的人的公众号，比如：Tsinghuajoking——卓晴卓大的公众号。</p><p>我时常佩服他每天更新的频率，365天不曾间断过。我这个大学生，精力应该比他充沛，也时常会觉得今天怎么更新法、经常会到大晚上才更新。</p><p>我一看他的发表时间，哦！原来如此！</p><p>他每天估计6点起床，闲暇之时才抽空写的文章，八点左右一定发布！</p><p>早上的时间多美好啊，走在路上，听着鸟语、踩着落叶🍂，看学校的环卫打扫卫生，也算惬意。</p><p>当然，我做不到6点起来，只能做到8点左右起来，水篇博客。</p><hr /><p>写：写作。对自己知识的梳理。其实写作更多的是记录自己的反思，自己的思考和自己的感悟。</p><p>我的行文脉络、语言措辞还有待提升，写作逼着我去抠每个词，每句话之间的联系，帮助我有更好的语言逻辑结构、提升我的行文能力。</p><p>除此以外，我们说，学习是吸收知识的过程，但是我们要巩固知识，还需要输出知识，得到反馈，修改反馈才能更好的巩固知识。</p><p>写博客就是一个输出的过程，我开通评论功能，也希望大家能对我的文章提出指导意见，本人才疏学浅，自己的浅薄知识，难免有点错误，望大家不吝指正。</p><hr /><p>读：读书。读书对知识获取最快的途径，一个人的知识、思想、经验就浓缩在一本书里，但也并不是什么都值得读，有些人有些书你就是读不下去，我们要学会筛选，取其精华，去其糟粕，那我们想要的，而不是一本书里，什么都想要。不太现实，也不合理。但多读书总是好的，和别人的思想进行碰撞，不管对方是哪里的人、什么职业的人，与他们交流可以让我学习到不同的知识、见识到不同的东西、了解不同的见地。</p><p>交流让我的见识变广，交流让我对世界的认识变充实。</p><p>我对我初中学生讲：能读就读吧，读书的高低，决定了你未来玩的上限。</p><hr /><p>跑：跑步。其实跑步不是很全面，其实可以说是锻炼。锻炼可以提高我们的多巴胺分泌，锻炼的好处除了提高我们身体外，还有脑子。锻炼可以促进血液流动的同时，会帮助我们大脑清理留在里面的垃圾。</p><p>我的一个同学，当时谈恋爱初期，心情不好的时候跟我聊天。我说，心情不好，就会去跑步吧。他跑完后我问他：“怎么样？”，“轻松多了”，他说。如果说德智体美劳全面发展，那肯定是少不了运动。</p><p>当我早上不够清醒，也会跳起来动一动。其实，在我们想不出东西的时候，适当的动一动是有必要的，适当的划水，除了更好的发散思维，还有让自己的大脑休息一下，以便更好地学习。</p><hr /><p>冥想。冥想很少有人提及，它的好处我讲的可能不是很全面（虽然前面的也不是很全面）。</p><p>但我还是想推荐大家试试，如果你感到心情烦躁或者注意力无法集中，可以来试试它，一两天以后，一定会有感觉的。</p><p>—</p><h1 id="感谢万能的开源">感谢万能的开源</h1><p>其实写博客是为了帮助我能和别人交流，不单单是在现实生活中。</p><p>在网上，我能和各种各样的人交流，可以进一步拓宽我的知识面，和别人的交流能更进一步帮助我改进我自己。</p><p>当然，写博客不是什么很难的事，打字就行了。</p><p>搭建博客的方法，网上教程很多，我很感谢它们的无私奉献，感谢开源的那一群人。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>小记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>个人</tag>
-      
-      <tag>小记</tag>
+      <tag>学习笔记</tag>
       
     </tags>
     
